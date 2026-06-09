@@ -7,7 +7,7 @@
       name="description"
       content="Academic personal website for Zheng (Patrick) TONG, focusing on computational social science, political communication, AI and communication ethics, causal inference, and text analysis."
     >
-    <title>Zheng (Patrick) TONG | Academic Portfolio</title>
+    <title data-i18n-title>Zheng (Patrick) TONG | Academic Portfolio</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -17,14 +17,19 @@
       <nav class="nav" aria-label="Primary navigation">
         <a class="brand" href="#top" aria-label="Zheng Patrick TONG home">
           <span class="brand-mark" aria-hidden="true">ZT</span>
-          <span>Zheng (Patrick) TONG</span>
+          <span data-i18n="brandName">Zheng (Patrick) TONG</span>
         </a>
         <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#research">Research</a>
-          <a href="#education">Education</a>
-          <a href="#experience">Experience</a>
-          <a href="#contact">Contact</a>
+          <a href="#about" data-i18n="navAbout">About</a>
+          <a href="#research" data-i18n="navResearch">Research</a>
+          <a href="#education" data-i18n="navEducation">Education</a>
+          <a href="#experience" data-i18n="navExperience">Experience</a>
+          <a href="#contact" data-i18n="navContact">Contact</a>
+        </div>
+        <div class="language-switcher" role="group" aria-label="Language selection">
+          <button class="is-active" type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="zh-Hans" aria-pressed="false">简</button>
+          <button type="button" data-lang="zh-Hant" aria-pressed="false">繁</button>
         </div>
       </nav>
     </header>
@@ -33,26 +38,26 @@
       <section class="hero section-shell" id="top" aria-labelledby="hero-title">
         <div class="hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow">Computational social science · Political communication · AI ethics</p>
-            <h1 id="hero-title">Zheng (Patrick) TONG</h1>
-            <p class="hero-lede">
+            <p class="eyebrow" data-i18n="heroEyebrow">Computational social science · Political communication · AI ethics</p>
+            <h1 id="hero-title" data-i18n="heroName">Zheng (Patrick) TONG</h1>
+            <p class="hero-lede" data-i18n="heroLede">
               I study political communication, AI-mediated social experience, migration,
               and family communication through computational, causal, and text-analytic
               methods.
             </p>
             <div class="hero-actions" aria-label="Primary contact actions">
-              <a class="button ghost" href="mailto:zhengtongpatrick@gmail.com">Email Patrick</a>
-              <span class="button unavailable" aria-disabled="true">CV available upon request</span>
+              <a class="button ghost" href="mailto:zhengtongpatrick@gmail.com" data-i18n="emailCta">Email Patrick</a>
+              <span class="button unavailable" aria-disabled="true" data-i18n="cvUnavailable">CV available upon request</span>
             </div>
           </div>
 
           <aside class="hero-panel" aria-label="Academic profile summary">
             <div class="panel-rule"></div>
-            <p class="panel-label">Research Profile</p>
+            <p class="panel-label" data-i18n="profileLabel">Research Profile</p>
             <ul class="profile-list">
-              <li>MSocSc Social Data Analytics, The University of Hong Kong, expected 2026</li>
-              <li>BA Journalism and Communication, Macau University of Science and Technology</li>
-              <li>Computational social science training across surveys, NLP, networks, and experiments</li>
+              <li data-i18n="profileOne">MSocSc Social Data Analytics, The University of Hong Kong, expected 2026</li>
+              <li data-i18n="profileTwo">BA Journalism and Communication, Macau University of Science and Technology</li>
+              <li data-i18n="profileThree">Computational social science training across surveys, NLP, networks, and experiments</li>
             </ul>
           </aside>
         </div>
@@ -60,11 +65,11 @@
 
       <section class="section-shell about-grid" id="about" aria-labelledby="about-title">
         <div>
-          <p class="section-kicker">About</p>
-          <h2 id="about-title">A communication scholar working across computation, causality, and text.</h2>
+          <p class="section-kicker" data-i18n="aboutKicker">About</p>
+          <h2 id="about-title" data-i18n="aboutTitle">A communication scholar working across computation, causality, and text.</h2>
         </div>
         <div class="section-text">
-          <p>
+          <p data-i18n="aboutText">
             Zheng (Patrick) TONG is an MSocSc student in Social Data Analytics at
             The University of Hong Kong with a background in journalism and communication.
             His research profile brings together computational social science, political
@@ -77,27 +82,27 @@
 
       <section class="section-shell" aria-labelledby="interests-title">
         <div class="section-heading compact">
-          <p class="section-kicker">Research Interests</p>
-          <h2 id="interests-title">Core areas</h2>
+          <p class="section-kicker" data-i18n="interestsKicker">Research Interests</p>
+          <h2 id="interests-title" data-i18n="interestsTitle">Core areas</h2>
         </div>
         <ul class="interest-cloud" aria-label="Research interests">
-          <li>Computational Social Science</li>
-          <li>Political Communication</li>
-          <li>AI and Communication Ethics</li>
-          <li>Gender Studies</li>
-          <li>Marginalized Groups</li>
-          <li>Migration Studies</li>
-          <li>Causal Inference</li>
-          <li>Text Analysis</li>
+          <li data-i18n="interestCss">Computational Social Science</li>
+          <li data-i18n="interestPolitical">Political Communication</li>
+          <li data-i18n="interestAiEthics">AI and Communication Ethics</li>
+          <li data-i18n="interestGender">Gender Studies</li>
+          <li data-i18n="interestMarginalized">Marginalized Groups</li>
+          <li data-i18n="interestMigration">Migration Studies</li>
+          <li data-i18n="interestCausal">Causal Inference</li>
+          <li data-i18n="interestText">Text Analysis</li>
         </ul>
       </section>
 
       <section class="research-section" id="research" aria-labelledby="research-title">
         <div class="section-shell">
           <div class="section-heading research-heading">
-            <p class="section-kicker">Research / Papers</p>
-            <h2 id="research-title">Current single-authored research</h2>
-            <p>
+            <p class="section-kicker" data-i18n="researchKicker">Research / Papers</p>
+            <h2 id="research-title" data-i18n="researchTitle">Current single-authored research</h2>
+            <p data-i18n="researchIntro">
               These projects examine political rhetoric, AI-mediated presence, and
               family communication through computational measurement, experimental design,
               and causal inference.
@@ -107,88 +112,88 @@
           <div class="paper-grid">
             <article class="paper-card featured">
               <div class="paper-topline">
-                <span class="status accepted">Accepted</span>
-                <span class="area">Political Communication</span>
+                <span class="status accepted" data-i18n="statusAccepted">Accepted</span>
+                <span class="area" data-i18n="areaPolitical">Political Communication</span>
               </div>
-              <h3>Exclusionary Populism in the U.S.: From Party-wide Patterns to Trump’s Rhetoric</h3>
-              <p class="venue">
+              <h3 data-i18n="paperOneTitle">Exclusionary Populism in the U.S.: From Party-wide Patterns to Trump’s Rhetoric</h3>
+              <p class="venue" data-i18n="paperOneVenue">
                 International Association for Media and Communication Research (IAMCR) 2026,
                 Political Communication Research Section (POL); selected as Panel Chair
               </p>
-              <p class="meta">Galway, Ireland · Jun. – Jul. 2026</p>
-              <p>
+              <p class="meta" data-i18n="paperGalwayDate">Galway, Ireland · Jun. – Jul. 2026</p>
+              <p data-i18n="paperOneText">
                 This project traces exclusionary populist rhetoric in U.S. presidential
                 campaign speeches using a party-month panel from 1952 to 2024, the
                 Annenberg Presidential Database, LIWC-based text measures, and a Python
                 workflow for text processing, longitudinal modeling, and visualization.
               </p>
               <div class="method-row" aria-label="Methods and concepts">
-                <span>Exclusionary Populism Index</span>
-                <span>LIWC measurement</span>
-                <span>Panel modeling</span>
+                <span data-i18n="methodEpi">Exclusionary Populism Index</span>
+                <span data-i18n="methodLiwc">LIWC measurement</span>
+                <span data-i18n="methodPanel">Panel modeling</span>
                 <span>Python</span>
               </div>
             </article>
 
             <article class="paper-card featured">
               <div class="paper-topline">
-                <span class="status accepted">Accepted</span>
-                <span class="area">AI Ethics</span>
+                <span class="status accepted" data-i18n="statusAccepted">Accepted</span>
+                <span class="area" data-i18n="areaAiEthics">AI Ethics</span>
               </div>
-              <h3>When the Dead Seem Present: Perceived Realism, Social Presence, and Psychological Mechanisms in AI-based Digital Resurrection</h3>
-              <p class="venue">
+              <h3 data-i18n="paperTwoTitle">When the Dead Seem Present: Perceived Realism, Social Presence, and Psychological Mechanisms in AI-based Digital Resurrection</h3>
+              <p class="venue" data-i18n="paperTwoVenue">
                 IAMCR 2026, Ethics of Society and Ethics of Communication Working Group (ETH)
               </p>
-              <p class="meta">Galway, Ireland · Jun. – Jul. 2026</p>
-              <p>
+              <p class="meta" data-i18n="paperGalwayDate">Galway, Ireland · Jun. – Jul. 2026</p>
+              <p data-i18n="paperTwoText">
                 The study examines AI-based digital resurrection through perceived realism,
                 social presence, emotional authenticity and comfort, uncanny discomfort,
                 and behavioral intention in a preregistered between-subjects online survey
                 experiment in Qualtrics with a three-condition technical fidelity manipulation.
               </p>
               <div class="method-row" aria-label="Methods and concepts">
-                <span>Survey experiment</span>
-                <span>Moderated parallel mediation</span>
-                <span>Robustness checks</span>
+                <span data-i18n="methodSurveyExperiment">Survey experiment</span>
+                <span data-i18n="methodMediation">Moderated parallel mediation</span>
+                <span data-i18n="methodRobustness">Robustness checks</span>
                 <span>Qualtrics</span>
               </div>
             </article>
 
             <article class="paper-card">
               <div class="paper-topline">
-                <span class="status submitted">Submitted</span>
-                <span class="area">Text Analysis</span>
+                <span class="status submitted" data-i18n="statusSubmitted">Submitted</span>
+                <span class="area" data-i18n="areaTextAnalysis">Text Analysis</span>
               </div>
-              <h3>Speaking as the People, the Protector, or the Provocateur: Rhetorical Persona Types in U.S. Presidential Campaign Speeches (1952–2024)</h3>
-              <p class="venue">
+              <h3 data-i18n="paperThreeTitle">Speaking as the People, the Protector, or the Provocateur: Rhetorical Persona Types in U.S. Presidential Campaign Speeches (1952–2024)</h3>
+              <p class="venue" data-i18n="paperThreeVenue">
                 Submitted to National Communication Association (NCA) 2026,
                 Political Communication Division
               </p>
-              <p>
+              <p data-i18n="paperThreeText">
                 This paper identifies recurring rhetorical personae across U.S. presidential
                 campaign speeches by combining a populism continuum, people-centered
                 language, anti-elite appeals, policy-oriented discourse, threat-based
                 rhetoric, LIWC-based lexical indicators, and latent profile analysis.
               </p>
               <div class="method-row" aria-label="Methods and concepts">
-                <span>Latent profile analysis</span>
-                <span>Rhetorical signatures</span>
-                <span>LIWC indicators</span>
-                <span>Party and period variation</span>
+                <span data-i18n="methodLpa">Latent profile analysis</span>
+                <span data-i18n="methodRhetoricalSignatures">Rhetorical signatures</span>
+                <span data-i18n="methodLiwcIndicators">LIWC indicators</span>
+                <span data-i18n="methodVariation">Party and period variation</span>
               </div>
             </article>
 
             <article class="paper-card">
               <div class="paper-topline">
-                <span class="status submitted">Submitted</span>
-                <span class="area">Causal Inference</span>
+                <span class="status submitted" data-i18n="statusSubmitted">Submitted</span>
+                <span class="area" data-i18n="areaCausal">Causal Inference</span>
               </div>
-              <h3>When Home Moves Away: The Causal Effect of Parental Rural-to-Urban Migration on Rural-Origin Children’s Intergenerational Ties in China</h3>
-              <p class="venue">
+              <h3 data-i18n="paperFourTitle">When Home Moves Away: The Causal Effect of Parental Rural-to-Urban Migration on Rural-Origin Children’s Intergenerational Ties in China</h3>
+              <p class="venue" data-i18n="paperFourVenue">
                 Submitted to National Communication Association (NCA) 2026,
                 Family Communication Division
               </p>
-              <p>
+              <p data-i18n="paperFourText">
                 Using China Family Panel Studies data, this project studies left-behind,
                 co-migrant, and non-migrant rural-origin children through parent-child
                 communication, emotional attention, parental monitoring, conflict,
@@ -196,9 +201,9 @@
               </p>
               <div class="method-row" aria-label="Methods and concepts">
                 <span>CFPS</span>
-                <span>Propensity-score methods</span>
-                <span>Difference-in-differences</span>
-                <span>Migration studies</span>
+                <span data-i18n="methodPsm">Propensity-score methods</span>
+                <span data-i18n="methodDid">Difference-in-differences</span>
+                <span data-i18n="methodMigration">Migration studies</span>
               </div>
             </article>
           </div>
@@ -207,31 +212,31 @@
 
       <section class="section-shell two-column" id="education" aria-labelledby="education-title">
         <div class="section-heading sticky-heading">
-          <p class="section-kicker">Education</p>
-          <h2 id="education-title">Academic training</h2>
+          <p class="section-kicker" data-i18n="educationKicker">Education</p>
+          <h2 id="education-title" data-i18n="educationTitle">Academic training</h2>
         </div>
         <div class="timeline">
           <article class="timeline-item">
-            <p class="timeline-date">Sep. 2025 – Nov. 2026 expected</p>
-            <h3>The University of Hong Kong</h3>
-            <p>
+            <p class="timeline-date" data-i18n="hkuDate">Sep. 2025 – Nov. 2026 expected</p>
+            <h3 data-i18n="hkuName">The University of Hong Kong</h3>
+            <p data-i18n="hkuText">
               MSocSc in Social Data Analytics · GPA 3.66/4.30 · coursework in social
               data analytics, programming, statistics, machine learning, NLP, and social
               network analysis
             </p>
           </article>
           <article class="timeline-item">
-            <p class="timeline-date">Sep. 2021 – Jun. 2025</p>
-            <h3>Macau University of Science and Technology</h3>
-            <p>
+            <p class="timeline-date" data-i18n="mustDate">Sep. 2021 – Jun. 2025</p>
+            <h3 data-i18n="mustName">Macau University of Science and Technology</h3>
+            <p data-i18n="mustText">
               BA in Journalism and Communication, major in Communication · GPA 3.77/4.00
               (Top 1%) · Dean’s Honor List and Dean’s Honor List Scholarship every academic year
             </p>
           </article>
           <article class="timeline-item">
-            <p class="timeline-date">Jun. 2025 – Jul. 2025</p>
-            <h3>National University of Singapore</h3>
-            <p>
+            <p class="timeline-date" data-i18n="nusDate">Jun. 2025 – Jul. 2025</p>
+            <h3 data-i18n="nusName">National University of Singapore</h3>
+            <p data-i18n="nusText">
               Summer School for Social Science Research Methods · training in Survey
               Research (Distinction) and AI &amp; Experimental Methods (Merit)
             </p>
@@ -241,32 +246,32 @@
 
       <section class="section-shell two-column" id="experience" aria-labelledby="experience-title">
         <div class="section-heading sticky-heading">
-          <p class="section-kicker">Selected Professional Experience</p>
-          <h2 id="experience-title">Newsroom and media practice</h2>
+          <p class="section-kicker" data-i18n="experienceKicker">Selected Professional Experience</p>
+          <h2 id="experience-title" data-i18n="experienceTitle">Newsroom and media practice</h2>
         </div>
         <div class="experience-list">
           <article>
-            <h3>Southern Metropolis Daily</h3>
-            <p class="role-line">News Reporter and Editor Intern · Zhuhai, China · Jun. 2024 – Sep. 2024</p>
-            <p>
+            <h3 data-i18n="smdName">Southern Metropolis Daily</h3>
+            <p class="role-line" data-i18n="smdRole">News Reporter and Editor Intern · Zhuhai, China · Jun. 2024 – Sep. 2024</p>
+            <p data-i18n="smdText">
               Reported, wrote, edited, and packaged digital news under daily newsroom
               deadlines, covering public affairs, local issues, and economic topics while
               supporting homepage content curation and archive digitization.
             </p>
           </article>
           <article>
-            <h3>Shenzhen Special Zone Daily</h3>
-            <p class="role-line">News Reporter Intern · Shenzhen, China · Jun. 2023 – Aug. 2023</p>
-            <p>
+            <h3 data-i18n="szzdName">Shenzhen Special Zone Daily</h3>
+            <p class="role-line" data-i18n="szzdRole">News Reporter Intern · Shenzhen, China · Jun. 2023 – Aug. 2023</p>
+            <p data-i18n="szzdText">
               Investigated the social impact of urbanization on migrant workers through
               field interviews, stakeholder collaboration, and socioeconomic data analysis
               for a three-part feature series.
             </p>
           </article>
           <article>
-            <h3>Wuhan Traffic Broadcasting Station</h3>
-            <p class="role-line">New Media Editor Intern · Wuhan, China · Jun. 2022 – Aug. 2022</p>
-            <p>
+            <h3 data-i18n="wuhanName">Wuhan Traffic Broadcasting Station</h3>
+            <p class="role-line" data-i18n="wuhanRole">New Media Editor Intern · Wuhan, China · Jun. 2022 – Aug. 2022</p>
+            <p data-i18n="wuhanText">
               Managed social media updates across Weibo, Douyin, and WeChat; visualized
               COVID-19 case trajectory data; and produced multimedia content for a broad
               online audience.
@@ -277,18 +282,18 @@
 
       <section class="section-shell two-column" aria-labelledby="service-title">
         <div class="section-heading sticky-heading">
-          <p class="section-kicker">Leadership / Service</p>
-          <h2 id="service-title">Academic and campus service</h2>
+          <p class="section-kicker" data-i18n="serviceKicker">Leadership / Service</p>
+          <h2 id="service-title" data-i18n="serviceTitle">Academic and campus service</h2>
         </div>
         <div class="service-card">
-          <h3>Macau University of Science and Technology Volunteer Association</h3>
-          <p class="role-line">Head of the Secretariat · Dec. 2021 – Feb. 2025</p>
-          <p>
+          <h3 data-i18n="serviceOrg">Macau University of Science and Technology Volunteer Association</h3>
+          <p class="role-line" data-i18n="serviceRole">Head of the Secretariat · Dec. 2021 – Feb. 2025</p>
+          <p data-i18n="serviceText">
             Coordinated cross-department operations, meeting records, internal communication,
             and event logistics for volunteer initiatives including blood donation and
             community clean-ups.
           </p>
-          <div class="service-note">
+          <div class="service-note" data-i18n="serviceNote">
             IAMCR 2026 POL panel chair role is noted with the accepted political communication paper above.
           </div>
         </div>
@@ -296,21 +301,21 @@
 
       <section class="section-shell skills-section" aria-labelledby="skills-title">
         <div class="section-heading compact">
-          <p class="section-kicker">Skills / Methods</p>
-          <h2 id="skills-title">Technical and methodological toolkit</h2>
+          <p class="section-kicker" data-i18n="skillsKicker">Skills / Methods</p>
+          <h2 id="skills-title" data-i18n="skillsTitle">Technical and methodological toolkit</h2>
         </div>
         <div class="skills-grid">
           <div class="skill-block">
-            <h3>Tools</h3>
-            <p>Python, R, SPSS, Gephi, ATLAS.ti (Certified Student Trainer), NVivo, Adobe XD &amp; Photoshop, Microsoft Office Suite</p>
+            <h3 data-i18n="toolsTitle">Tools</h3>
+            <p data-i18n="toolsText">Python, R, Codex, SPSS, Gephi, ATLAS.ti (Certified Student Trainer), NVivo, Adobe XD &amp; Photoshop, GitHub, Microsoft Office Suite</p>
           </div>
           <div class="skill-block">
-            <h3>Languages</h3>
-            <p>Mandarin (Native), English (Proficiency), Cantonese (Basic)</p>
+            <h3 data-i18n="languagesTitle">Languages</h3>
+            <p data-i18n="languagesText">Mandarin (Native), English (Proficiency), Cantonese (Basic)</p>
           </div>
           <div class="skill-block">
-            <h3>Methods</h3>
-            <p>
+            <h3 data-i18n="methodsTitle">Methods</h3>
+            <p data-i18n="methodsText">
               Survey experiments, causal inference, propensity-score methods, DiD,
               computational text analysis, LIWC-based measurement, latent profile analysis,
               panel data analysis
@@ -322,20 +327,275 @@
       <section class="contact-section" id="contact" aria-labelledby="contact-title">
         <div class="section-shell contact-card">
           <div>
-            <p class="section-kicker">Contact</p>
-            <h2 id="contact-title">For research conversations, collaboration, and academic inquiries.</h2>
+            <p class="section-kicker" data-i18n="contactKicker">Contact</p>
+            <h2 id="contact-title" data-i18n="contactTitle">For research conversations, collaboration, and academic inquiries.</h2>
           </div>
           <div class="contact-actions">
             <a class="contact-link" href="mailto:zhengtongpatrick@gmail.com">zhengtongpatrick@gmail.com</a>
-            <span class="contact-link unavailable" aria-disabled="true">CV available upon request</span>
+            <span class="contact-link unavailable" aria-disabled="true" data-i18n="cvUnavailable">CV available upon request</span>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>© 2026 Zheng (Patrick) TONG</p>
-      <a href="#top">Back to top</a>
+      <p data-i18n="footerName">© 2026 Zheng (Patrick) TONG</p>
+      <a href="#top" data-i18n="backToTop">Back to top</a>
     </footer>
+
+    <script>
+      const defaultCopy = Object.fromEntries(
+        Array.from(document.querySelectorAll("[data-i18n]")).map((element) => [
+          element.dataset.i18n,
+          element.textContent.trim()
+        ])
+      );
+
+      const localizedCopy = {
+        "zh-Hans": {
+          pageTitle: "童政 | 学术个人网站",
+          brandName: "童政",
+          navAbout: "关于",
+          navResearch: "研究",
+          navEducation: "教育",
+          navExperience: "经历",
+          navContact: "联系",
+          heroEyebrow: "计算社会科学 · 政治传播 · AI 与传播伦理",
+          heroName: "童政",
+          heroLede: "我关注政治传播、AI 介入的社会经验、迁移与家庭传播，并使用计算、因果推断与文本分析方法开展研究。",
+          emailCta: "邮件联系",
+          cvUnavailable: "简历可按需提供",
+          profileLabel: "研究简介",
+          profileOne: "香港大学社会科学硕士（社会数据分析方向），预计 2026 年毕业",
+          profileTwo: "澳门科技大学新闻传播学文学学士（传播学方向）",
+          profileThree: "接受调查、自然语言处理、社会网络与实验方法等计算社会科学训练",
+          aboutKicker: "关于",
+          aboutTitle: "一名横跨计算、因果推断与文本分析的传播研究者。",
+          aboutText: "童政是香港大学社会数据分析方向社会科学硕士研究生，本科背景为新闻传播学。他的研究结合计算社会科学、政治传播、AI 与传播伦理、迁移研究和家庭传播，尤其关注因果推断、调查实验与文本分析方法。",
+          interestsKicker: "研究兴趣",
+          interestsTitle: "核心方向",
+          interestCss: "计算社会科学",
+          interestPolitical: "政治传播",
+          interestAiEthics: "AI 与传播伦理",
+          interestGender: "性别研究",
+          interestMarginalized: "社会边缘群体",
+          interestMigration: "迁移研究",
+          interestCausal: "因果推断",
+          interestText: "文本分析",
+          researchKicker: "研究 / 论文",
+          researchTitle: "当前独立研究",
+          researchIntro: "这些项目围绕政治修辞、AI 介入的临场感与家庭传播展开，结合计算测量、实验设计与因果推断。",
+          statusAccepted: "已入选",
+          statusSubmitted: "已投稿",
+          areaPolitical: "政治传播",
+          areaAiEthics: "AI 伦理",
+          areaTextAnalysis: "文本分析",
+          areaCausal: "因果推断",
+          paperOneTitle: "Exclusionary Populism in the U.S.: From Party-wide Patterns to Trump’s Rhetoric",
+          paperOneVenue: "入选国际媒介与传播研究学会（IAMCR）2026 年会政治传播研究分会（POL）；并获选为该分会 Panel Chair",
+          paperGalwayDate: "爱尔兰戈尔韦 · 2026 年 6 月 – 7 月",
+          paperOneText: "本研究考察美国总统竞选演讲中的排斥性民粹主义修辞，基于 Annenberg Presidential Database 与 LIWC 文本测量构建 1952–2024 年政党—月份面板数据，并使用 Python 搭建文本处理、纵向建模与可视化流程。",
+          methodEpi: "排斥性民粹主义指数",
+          methodLiwc: "LIWC 测量",
+          methodPanel: "面板建模",
+          paperTwoTitle: "When the Dead Seem Present: Perceived Realism, Social Presence, and Psychological Mechanisms in AI-based Digital Resurrection",
+          paperTwoVenue: "入选 IAMCR 2026 年会社会伦理与传播伦理工作组（ETH）",
+          paperTwoText: "本研究围绕 AI 数字复活，考察感知真实感、社会临场感、情感真实性/安慰感、恐怖谷不适感与行为意向，并通过 Qualtrics 设计预注册组间在线调查实验，操控三种技术真实度条件。",
+          methodSurveyExperiment: "调查实验",
+          methodMediation: "调节式平行中介",
+          methodRobustness: "稳健性检验",
+          paperThreeTitle: "Speaking as the People, the Protector, or the Provocateur: Rhetorical Persona Types in U.S. Presidential Campaign Speeches (1952–2024)",
+          paperThreeVenue: "投稿至 National Communication Association（NCA）2026 年会政治传播分会",
+          paperThreeText: "本研究识别美国总统竞选演讲中反复出现的修辞人格类型，结合民粹主义连续体、人民中心语言、反精英诉求、政策导向话语、威胁修辞、LIWC 词汇指标与潜在剖面分析。",
+          methodLpa: "潜在剖面分析",
+          methodRhetoricalSignatures: "候选人修辞特征",
+          methodLiwcIndicators: "LIWC 词汇指标",
+          methodVariation: "政党与时期差异",
+          paperFourTitle: "When Home Moves Away: The Causal Effect of Parental Rural-to-Urban Migration on Rural-Origin Children’s Intergenerational Ties in China",
+          paperFourVenue: "投稿至 National Communication Association（NCA）2026 年会家庭传播分会",
+          paperFourText: "本研究使用中国家庭追踪调查（CFPS）面板数据，区分留守、随迁与非迁移农村户籍儿童，考察家庭迁移安排对亲子沟通、情感关注、父母监管与冲突的影响，并使用倾向得分匹配与双重差分方法。",
+          methodPsm: "倾向得分方法",
+          methodDid: "双重差分",
+          methodMigration: "迁移研究",
+          educationKicker: "教育背景",
+          educationTitle: "学术训练",
+          hkuDate: "2025 年 9 月 – 2026 年 11 月（预计）",
+          hkuName: "香港大学",
+          hkuText: "社会科学硕士（社会数据分析方向）· GPA 3.66/4.30 · 课程涵盖社会数据分析、社会科学编程、统计学、机器学习、自然语言处理与社会网络分析",
+          mustDate: "2021 年 9 月 – 2025 年 6 月",
+          mustName: "澳门科技大学",
+          mustText: "新闻传播学文学学士（传播学方向）· GPA 3.77/4.00（前 1%）· 每学年获院长优秀生榜与院长优秀生榜奖学金",
+          nusDate: "2025 年 6 月 – 2025 年 7 月",
+          nusName: "新加坡国立大学",
+          nusText: "社会科学研究方法暑期学校 · 完成调查研究（Distinction）及人工智能与实验法（Merit）训练",
+          experienceKicker: "专业经历",
+          experienceTitle: "新闻与媒体实践",
+          smdName: "南方都市报社",
+          smdRole: "采编实习生 · 珠海市 · 2024 年 6 月 – 2024 年 9 月",
+          smdText: "在日常新闻节奏下完成选题、采访、撰稿、审校与数字内容包装，覆盖政治、民生、经济等领域，并参与首页内容策划与历史文章数字化归档。",
+          szzdName: "深圳特区报社",
+          szzdRole: "实习记者 · 深圳市 · 2023 年 6 月 – 2023 年 8 月",
+          szzdText: "围绕城市化对城中村与劳工群体的社会影响开展调研，结合实地采访、利益相关方协作与社会经济数据分析，完成三篇专题系列报道。",
+          wuhanName: "武汉交通广播电台",
+          wuhanRole: "新媒体编辑 · 武汉市 · 2022 年 6 月 – 2022 年 8 月",
+          wuhanText: "运营微博、抖音、微信公众号等平台，汇总并可视化新冠轨迹数据，制作面向公众安全引导的多媒体内容。",
+          serviceKicker: "领导 / 服务",
+          serviceTitle: "学术与校园服务",
+          serviceOrg: "澳门科技大学学生会义工团",
+          serviceRole: "秘书部部长 · 2021 年 12 月 – 2025 年 2 月",
+          serviceText: "协调跨部门运营、会议记录、内部沟通与活动执行，参与组织校园献血和社区公益等二十余项义工活动。",
+          serviceNote: "IAMCR 2026 POL 分会 Panel Chair 角色已在上方已入选的政治传播论文中标注。",
+          skillsKicker: "技能 / 方法",
+          skillsTitle: "技术与方法工具箱",
+          toolsTitle: "工具",
+          toolsText: "Python、R、Codex、SPSS、Gephi、ATLAS.ti（认证学生培训师）、NVivo、Adobe XD & Photoshop、GitHub、Microsoft Office办公软件",
+          languagesTitle: "语言能力",
+          languagesText: "普通话；英语（IELTS 7.0；CET-6 530）",
+          methodsTitle: "方法",
+          methodsText: "调查实验、因果推断、倾向得分方法、双重差分、计算文本分析、LIWC 测量、潜在剖面分析、面板数据分析",
+          contactKicker: "联系",
+          contactTitle: "欢迎就研究交流、合作与学术事务联系。",
+          footerName: "© 2026 童政",
+          backToTop: "返回顶部"
+        },
+        "zh-Hant": {
+          pageTitle: "童政 | 學術個人網站",
+          brandName: "童政",
+          navAbout: "關於",
+          navResearch: "研究",
+          navEducation: "教育",
+          navExperience: "經歷",
+          navContact: "聯繫",
+          heroEyebrow: "計算社會科學 · 政治傳播 · AI 與傳播倫理",
+          heroName: "童政",
+          heroLede: "我關注政治傳播、AI 介入的社會經驗、遷移與家庭傳播，並使用計算、因果推斷與文本分析方法開展研究。",
+          emailCta: "郵件聯繫",
+          cvUnavailable: "履歷可按需提供",
+          profileLabel: "研究簡介",
+          profileOne: "香港大學社會科學碩士（社會數據分析方向），預計 2026 年畢業",
+          profileTwo: "澳門科技大學新聞傳播學文學學士（傳播學方向）",
+          profileThree: "接受調查、自然語言處理、社會網絡與實驗方法等計算社會科學訓練",
+          aboutKicker: "關於",
+          aboutTitle: "一名橫跨計算、因果推斷與文本分析的傳播研究者。",
+          aboutText: "童政是香港大學社會數據分析方向社會科學碩士研究生，本科背景為新聞傳播學。他的研究結合計算社會科學、政治傳播、AI 與傳播倫理、遷移研究和家庭傳播，尤其關注因果推斷、調查實驗與文本分析方法。",
+          interestsKicker: "研究興趣",
+          interestsTitle: "核心方向",
+          interestCss: "計算社會科學",
+          interestPolitical: "政治傳播",
+          interestAiEthics: "AI 與傳播倫理",
+          interestGender: "性別研究",
+          interestMarginalized: "社會邊緣群體",
+          interestMigration: "遷移研究",
+          interestCausal: "因果推斷",
+          interestText: "文本分析",
+          researchKicker: "研究 / 論文",
+          researchTitle: "當前獨立研究",
+          researchIntro: "這些項目圍繞政治修辭、AI 介入的臨場感與家庭傳播展開，結合計算測量、實驗設計與因果推斷。",
+          statusAccepted: "已入選",
+          statusSubmitted: "已投稿",
+          areaPolitical: "政治傳播",
+          areaAiEthics: "AI 倫理",
+          areaTextAnalysis: "文本分析",
+          areaCausal: "因果推斷",
+          paperOneTitle: "Exclusionary Populism in the U.S.: From Party-wide Patterns to Trump’s Rhetoric",
+          paperOneVenue: "入選國際媒介與傳播研究學會（IAMCR）2026 年會政治傳播研究分會（POL）；並獲選為該分會 Panel Chair",
+          paperGalwayDate: "愛爾蘭戈爾韋 · 2026 年 6 月 – 7 月",
+          paperOneText: "本研究考察美國總統競選演講中的排斥性民粹主義修辭，基於 Annenberg Presidential Database 與 LIWC 文本測量構建 1952–2024 年政黨—月份面板數據，並使用 Python 搭建文本處理、縱向建模與視覺化流程。",
+          methodEpi: "排斥性民粹主義指數",
+          methodLiwc: "LIWC 測量",
+          methodPanel: "面板建模",
+          paperTwoTitle: "When the Dead Seem Present: Perceived Realism, Social Presence, and Psychological Mechanisms in AI-based Digital Resurrection",
+          paperTwoVenue: "入選 IAMCR 2026 年會社會倫理與傳播倫理工作組（ETH）",
+          paperTwoText: "本研究圍繞 AI 數字復活，考察感知真實感、社會臨場感、情感真實性/安慰感、恐怖谷不適感與行為意向，並通過 Qualtrics 設計預註冊組間在線調查實驗，操控三種技術真實度條件。",
+          methodSurveyExperiment: "調查實驗",
+          methodMediation: "調節式平行中介",
+          methodRobustness: "穩健性檢驗",
+          paperThreeTitle: "Speaking as the People, the Protector, or the Provocateur: Rhetorical Persona Types in U.S. Presidential Campaign Speeches (1952–2024)",
+          paperThreeVenue: "投稿至 National Communication Association（NCA）2026 年會政治傳播分會",
+          paperThreeText: "本研究識別美國總統競選演講中反覆出現的修辭人格類型，結合民粹主義連續體、人民中心語言、反精英訴求、政策導向話語、威脅修辭、LIWC 詞彙指標與潛在剖面分析。",
+          methodLpa: "潛在剖面分析",
+          methodRhetoricalSignatures: "候選人修辭特徵",
+          methodLiwcIndicators: "LIWC 詞彙指標",
+          methodVariation: "政黨與時期差異",
+          paperFourTitle: "When Home Moves Away: The Causal Effect of Parental Rural-to-Urban Migration on Rural-Origin Children’s Intergenerational Ties in China",
+          paperFourVenue: "投稿至 National Communication Association（NCA）2026 年會家庭傳播分會",
+          paperFourText: "本研究使用中國家庭追蹤調查（CFPS）面板數據，區分留守、隨遷與非遷移農村戶籍兒童，考察家庭遷移安排對親子溝通、情感關注、父母監管與衝突的影響，並使用傾向得分匹配與雙重差分方法。",
+          methodPsm: "傾向得分方法",
+          methodDid: "雙重差分",
+          methodMigration: "遷移研究",
+          educationKicker: "教育背景",
+          educationTitle: "學術訓練",
+          hkuDate: "2025 年 9 月 – 2026 年 11 月（預計）",
+          hkuName: "香港大學",
+          hkuText: "社會科學碩士（社會數據分析方向）· GPA 3.66/4.30 · 課程涵蓋社會數據分析、社會科學編程、統計學、機器學習、自然語言處理與社會網絡分析",
+          mustDate: "2021 年 9 月 – 2025 年 6 月",
+          mustName: "澳門科技大學",
+          mustText: "新聞傳播學文學學士（傳播學方向）· GPA 3.77/4.00（前 1%）· 每學年獲院長優秀生榜與院長優秀生榜獎學金",
+          nusDate: "2025 年 6 月 – 2025 年 7 月",
+          nusName: "新加坡國立大學",
+          nusText: "社會科學研究方法暑期學校 · 完成調查研究（Distinction）及人工智能與實驗法（Merit）訓練",
+          experienceKicker: "專業經歷",
+          experienceTitle: "新聞與媒體實踐",
+          smdName: "南方都市報社",
+          smdRole: "采編實習生 · 珠海市 · 2024 年 6 月 – 2024 年 9 月",
+          smdText: "在日常新聞節奏下完成選題、採訪、撰稿、審校與數字內容包裝，覆蓋政治、民生、經濟等領域，並參與首頁內容策劃與歷史文章數字化歸檔。",
+          szzdName: "深圳特區報社",
+          szzdRole: "實習記者 · 深圳市 · 2023 年 6 月 – 2023 年 8 月",
+          szzdText: "圍繞城市化對城中村與勞工群體的社會影響開展調研，結合實地採訪、利益相關方協作與社會經濟數據分析，完成三篇專題系列報道。",
+          wuhanName: "武漢交通廣播電台",
+          wuhanRole: "新媒體編輯 · 武漢市 · 2022 年 6 月 – 2022 年 8 月",
+          wuhanText: "運營微博、抖音、微信公眾號等平台，匯總並視覺化新冠軌跡數據，製作面向公眾安全引導的多媒體內容。",
+          serviceKicker: "領導 / 服務",
+          serviceTitle: "學術與校園服務",
+          serviceOrg: "澳門科技大學學生會義工團",
+          serviceRole: "秘書部部長 · 2021 年 12 月 – 2025 年 2 月",
+          serviceText: "協調跨部門運營、會議記錄、內部溝通與活動執行，參與組織校園獻血和社區公益等二十餘項義工活動。",
+          serviceNote: "IAMCR 2026 POL 分會 Panel Chair 角色已在上方已入選的政治傳播論文中標註。",
+          skillsKicker: "技能 / 方法",
+          skillsTitle: "技術與方法工具箱",
+          toolsTitle: "工具",
+          toolsText: "Python、R、Codex、SPSS、Gephi、ATLAS.ti（認證學生培訓師）、NVivo、Adobe XD & Photoshop、GitHub、Microsoft Office辦公軟件",
+          languagesTitle: "語言能力",
+          languagesText: "普通話；英語（IELTS 7.0；CET-6 530）",
+          methodsTitle: "方法",
+          methodsText: "調查實驗、因果推斷、傾向得分方法、雙重差分、計算文本分析、LIWC 測量、潛在剖面分析、面板數據分析",
+          contactKicker: "聯繫",
+          contactTitle: "歡迎就研究交流、合作與學術事務聯繫。",
+          footerName: "© 2026 童政",
+          backToTop: "返回頂部"
+        }
+      };
+
+      const titleByLanguage = {
+        en: "Zheng (Patrick) TONG | Academic Portfolio",
+        "zh-Hans": localizedCopy["zh-Hans"].pageTitle,
+        "zh-Hant": localizedCopy["zh-Hant"].pageTitle
+      };
+
+      function applyLanguage(language) {
+        const copy = language === "en" ? defaultCopy : localizedCopy[language];
+        document.documentElement.lang = language === "en" ? "en" : language;
+        document.title = titleByLanguage[language];
+
+        document.querySelectorAll("[data-i18n]").forEach((element) => {
+          const key = element.dataset.i18n;
+          element.textContent = copy[key] || defaultCopy[key] || element.textContent;
+        });
+
+        document.querySelectorAll("[data-lang]").forEach((button) => {
+          const isActive = button.dataset.lang === language;
+          button.classList.toggle("is-active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        });
+
+        localStorage.setItem("preferredLanguage", language);
+      }
+
+      document.querySelectorAll("[data-lang]").forEach((button) => {
+        button.addEventListener("click", () => applyLanguage(button.dataset.lang));
+      });
+
+      applyLanguage(localStorage.getItem("preferredLanguage") || "en");
+    </script>
   </body>
 </html>

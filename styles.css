@@ -116,6 +116,37 @@ button:focus-visible,
   color: var(--accent-deep);
 }
 
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.52);
+  padding: 0.2rem;
+}
+
+.language-switcher button {
+  min-width: 2.15rem;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1;
+  padding: 0.48rem 0.5rem;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.language-switcher button:hover,
+.language-switcher button.is-active {
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+}
+
 .section-shell {
   width: min(100% - 3rem, var(--max));
   margin: 0 auto;
@@ -160,7 +191,7 @@ h2 {
 h1 {
   max-width: 860px;
   margin-bottom: 1.25rem;
-  font-size: clamp(3.5rem, 8vw, 7.6rem);
+  font-size: clamp(3rem, 6.4vw, 5.9rem);
   letter-spacing: 0;
 }
 
@@ -534,6 +565,10 @@ h3 {
     row-gap: 0.55rem;
   }
 
+  .language-switcher {
+    align-self: flex-start;
+  }
+
   .hero {
     padding-top: 5.5rem;
   }
@@ -569,7 +604,7 @@ h3 {
   }
 
   h1 {
-    font-size: 3.15rem;
+    font-size: 2.75rem;
   }
 
   .hero,
