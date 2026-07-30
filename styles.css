@@ -191,7 +191,7 @@ h2 {
 h1 {
   max-width: 860px;
   margin-bottom: 1.25rem;
-  font-size: clamp(3rem, 6.4vw, 5.9rem);
+  font-size: clamp(2.75rem, 5.7vw, 5.35rem);
   letter-spacing: 0;
 }
 
@@ -396,6 +396,12 @@ h3 {
   color: #4f4d49;
 }
 
+.status.presented {
+  border-color: rgba(98, 52, 36, 0.25);
+  background: #f8f1ec;
+  color: var(--accent-deep);
+}
+
 .area {
   color: var(--muted);
 }
@@ -479,6 +485,7 @@ h3 {
 
 .service-note {
   margin-top: 1rem;
+  margin-bottom: 1.5rem;
   border-left: 2px solid var(--accent);
   padding-left: 1rem;
   color: var(--muted);
@@ -604,7 +611,7 @@ h3 {
   }
 
   h1 {
-    font-size: 2.75rem;
+    font-size: 2.5rem;
   }
 
   .hero,
