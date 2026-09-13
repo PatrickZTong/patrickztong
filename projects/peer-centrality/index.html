@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Peer Centrality and Academic Performance | Patrick (Zheng Tong)</title>
+  <meta name="description" content="Being sought out by classmates may signal access to information, support, or an existing reputation for achievement. This study links repeated peer nominations to later grades to examine how network prominence and academic performance are associated at different stages of a graduate program.">
+  <meta property="og:title" content="Peer Centrality and Academic Performance | Patrick (Zheng Tong)">
+  <meta property="og:description" content="Being sought out by classmates may signal access to information, support, or an existing reputation for achievement. This study links repeated peer nominations to later grades to examine how network prominence and academic performance are associated at different stages of a graduate program.">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="name" href="../../#home">Patrick (Zheng Tong)</a>
+      <div class="nav-links">
+        <a href="../../#home">Home</a><a href="../" aria-current="location">Projects</a>
+        <a href="../../#papers">Conference Papers</a><a href="../../#education">Education</a><a href="../../#teaching">Teaching</a>
+        <a href="../../CV_Patrick.pdf" target="_blank" rel="noopener">CV</a>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+    <article>
+      <header class="page-intro">
+        <a class="back-link" href="../"><span aria-hidden="true">←</span> Back to Projects</a>
+        <h1>Peer Centrality and Academic Performance</h1>
+        <p class="project-subtitle">Evidence from a Cohort-Based MSW Program</p>
+        <p class="project-summary">Being sought out by classmates may signal access to information, support, or an existing reputation for achievement. This study links repeated peer nominations to later grades to examine how network prominence and academic performance are associated at different stages of a graduate program.</p>
+      </header>
+      <nav class="project-toc" aria-label="On this page"><a href="#question">Research question</a><a href="#data">Data</a><a href="#models">Models</a><a href="#results">Results</a><a href="#interpretation">Interpretation</a></nav>
+      <div class="project-body">
+<section id="question"><h2>Does network prominence anticipate later achievement?</h2>
+<p>Being sought out by peers may reflect access to support, academic standing, or selection among similar students. This project asks whether incoming nominations in academic, friendship, and professional networks are associated with later GPA after accounting for earlier achievement—and whether the answer changes across academic stages.</p>
+<p>Incoming nominations capture recognition by other students, which may differ from how sociable a student considers themselves. Academic discussion concerns help with coursework; friendship captures personal ties; professional influence concerns recognition in social-work development. Keeping these networks separate tests whether different kinds of peer prominence carry similar information about later academic performance.</p>
+
+<p>A social-capital perspective treats relationships as channels for information, shared expectations, and support <span data-cites="coleman">(Coleman, 1988)</span>. A review of higher education research links social networks and support to academic success <span data-cites="mishra">(Mishra, 2020)</span>. The distinction among nomination networks gives this argument more specificity: academic discussion may locate help with coursework, friendship may reflect trust and emotional support, and professional influence may capture peer-recognized competence.</p>
+<p>Research in cohort-based MSW education shows how shared classes and repeated contact structure these different ties <span data-cites="mauldin17 mauldin22">(Mauldin et al., 2017, 2022)</span>. This project shifts attention from the formation of relationships to whether prominence within each network carries information about later grades.</p>
+
+</section>
+<section id="data"><h2>Repeated peer networks in a graduate program</h2>
+<p>The <a href="https://mavmatrix.uta.edu/socialnetworksforsocialgood_datasets/2/">Peer relationships among Master of Social Work students dataset</a> by Rebecca Mauldin and colleagues is available through the University of Texas at Arlington’s institutional repository. It follows MSW students in a large U.S. public university, combining repeated academic-discussion, friendship, and professional-influence nominations with student attributes and achievement measures. The cohort structure and repeated observations allow network position to precede the GPA outcome.</p>
+<p>The total roster contains 145 student records. Wave participation is distinct from roster size: 130 students participate in W1, 142 in W2, 140 in W3, and 116 in W4. Wave-two centrality predicts fall 2014 GPA, adjusting for GPA from the last 60 undergraduate credit hours. Wave-three centrality predicts fall 2015 GPA, adjusting for fall 2014 GPA. Fully adjusted models include 137 and 114 observations respectively.</p>
+<figure class="research-figure"><img src="../../assets/projects/peer-centrality/participation.png" width="2100" height="1500" alt="Participation by wave: 130 at wave one, 142 at wave two, 140 at wave three, and 116 at wave four." loading="lazy" decoding="async"><figcaption><strong>Figure 1. Participation across survey waves.</strong> Bars show participation by wave, rather than the total 145-record roster. Model samples are smaller when required covariates or outcomes are missing.<br><a class="figure-link" href="../../assets/projects/peer-centrality/participation.png">View full-size figure</a></figcaption></figure>
+<p>The participation figure distinguishes the student roster from the number observed in a survey or regression. This distinction matters when comparing early and later estimates: a smaller later model sample provides less information, and the students retained may differ from those lost to follow-up. Repeated observations establish temporal ordering, but they do not remove these changes in coverage.</p>
+
+<p>The public longitudinal data <span data-cites="mauldin20">(Mauldin et al., 2020)</span> make it possible to distinguish early peer prominence from relationships observed after an in-program academic record has developed.</p>
+
+</section>
+<section id="models"><h2>Network structure and prior achievement</h2>
+<figure class="research-figure"><img src="../../assets/projects/peer-centrality/academic-network.png" width="2400" height="1800" alt="An unlabeled academic nomination network showing clusters of connected students." loading="lazy" decoding="async"><figcaption><strong>Figure 2. The wave-two academic network.</strong> Nodes represent students and ties represent academic nominations. The layout reveals clusters and uneven connectedness; visual proximity is not a measured social distance. No individual labels are displayed.<br><a class="figure-link" href="../../assets/projects/peer-centrality/academic-network.png">View full-size figure</a></figcaption></figure>
+<p>Normalized incoming degree is the share of possible incoming nominations received. Models add prior GPA, age and sex, and fixed effects for six cohorts in sequence, using HC3 robust standard errors. Separate models examine each network; combined models enter all three centralities together. This adjustment does not experimentally separate social influence from selection.</p>
+<p>The academic network is denser than the friendship and professional networks at wave two. Its many nominations make the visual pattern of connection useful context, but density describes the network as a whole; incoming degree describes a student’s position within it. Cohort fixed effects then compare students while accounting for differences associated with their assigned cohorts.</p>
+
+<p>The choice of incoming degree follows <span data-cites="freeman">Freeman’s (1979)</span> distinction among forms of centrality: nominations received capture prominence recognized by others. However, achievement and network position may develop together. Research on selection and peer processes <span data-cites="vignery brouwer">(Vignery &amp; Laurier, 2020; Brouwer et al., 2022)</span> motivates the prior-GPA adjustment and cautions against interpreting lagged associations as pure social influence.</p>
+
+</section>
+<section id="results"><h2>Early associations persist; later ones attenuate</h2>
+<figure class="research-figure"><img src="../../assets/projects/peer-centrality/adjusted-associations.png" width="1180" height="806" alt="Early academic, friendship, and professional centrality coefficients are positive with intervals above zero. Later coefficients are smaller and their intervals include zero." loading="lazy" decoding="async"><figcaption><strong>Figure 3. Fully adjusted associations by network and timing.</strong> Fully adjusted estimates use HC3 standard errors. Points and approximate 95% intervals use coefficient ± 1.96 × SE, rescaled to a 0.01 increase in normalized indegree. Each estimate comes from a separate network model; this increment is not one nomination.<br><a class="figure-link" href="../../assets/projects/peer-centrality/adjusted-associations.png">View full-size figure</a></figcaption></figure><p>In the fully adjusted separate-network models, a 0.01 increase in normalized incoming degree is associated with approximately 0.021 GPA points for academic ties, 0.035 for friendship, and 0.044 for professional ties. These increments are shares of possible nominations, not single nominations.</p>
+<p>Later bivariate associations are positive but shrink markedly after adjustment for prior in-program GPA. Fully adjusted intervals include zero. When all three early centralities enter together, their correlated information makes individual estimates less precise; none reaches the conventional 5% threshold.</p>
+<figure class="research-figure"><img src="../../assets/projects/peer-centrality/later-adjustment.png" width="2700" height="1500" alt="Later-wave centrality coefficients fall sharply from the bivariate model after earlier GPA is included." loading="lazy" decoding="async"><figcaption><strong>Figure 4. How adjustment changes the later-wave association.</strong> M1 is bivariate; M2 adds prior GPA, M3 adds age and sex, and M4 adds cohort effects. Lines connect coefficient estimates across specifications, not changes in students over time. This plot uses the unrescaled centrality unit.<br><a class="figure-link" href="../../assets/projects/peer-centrality/later-adjustment.png">View full-size figure</a></figcaption></figure>
+<p>The later adjustment plot locates the main change at M2, when fall 2014 GPA enters. The additional demographic and cohort controls make much smaller changes. Later centrality therefore tracks achievement descriptively, but carries little additional information once established in-program performance is known. The early model conditions on a different baseline—undergraduate grades—so the timing contrast also involves different measures of prior achievement.</p>
+
+</section>
+<section id="robustness"><h2>Does the result depend on a single cohort?</h2>
+<p>Leaving out each cohort in turn preserves clearer early associations than later ones. Early academic, friendship, and professional estimates reach the 5% threshold in four, five, and six of the six omissions respectively; no later estimate does so. PageRank-based models likewise give clearer early friendship and professional associations and imprecise later estimates.</p>
+<figure class="research-figure"><img src="../../assets/projects/peer-centrality/cohort-robustness.png" width="3000" height="3600" alt="Early and later centrality point estimates across six cohort-omission checks." loading="lazy" decoding="async"><figcaption><strong>Figure 5. Leave-one-cohort-out estimates.</strong> Each point is a coefficient from a model refitted after omitting the indicated cohort. Lines connect point estimates, without uncertainty intervals. The panels use different vertical scales for early and later analyses. Significance counts summarize sensitivity to cohort composition, not a new measure of effect size.<br><a class="figure-link" href="../../assets/projects/peer-centrality/cohort-robustness.png">View full-size figure</a></figcaption></figure>
+<p>Cohort omission asks whether one part of the program drives the association; replacing indegree with PageRank asks whether the result depends on counting all nominations equally. These checks address different sensitivities. The weaker academic-network evidence under some alternatives, and the overlap among network types in combined models, make a uniform claim about all peer ties too strong.</p>
+
+</section>
+<section id="interpretation"><h2>When network position carries additional information</h2>
+<p>Early network prominence carries information beyond available pre-program grades; later prominence adds much less after accounting for in-program achievement. The contrast is compatible with support and selection operating together.</p>
+<p>Attrition, missing nominations, bounded GPA outcomes, and unmeasured student characteristics constrain interpretation. Evidence that changing relationships improves learning would be needed before recommending an intervention to increase centrality.</p>
+<p>The outcome distribution also sets limits on what can be detected: later GPA is high and more compressed than early GPA. An imprecise later coefficient cannot establish that peer relationships cease to matter for learning, professional development, or support. It establishes a narrower result about their additional association with the measured grades under these controls.</p>
+
+</section>
+<section id="references" class="project-references" aria-labelledby="references-heading"><h2 id="references-heading">References</h2>
+<p id="ref-brouwer">Brouwer, J., de Matos Fernandes, C. A., Steglich, C. E. G., Jansen, E. P. W. A., Hofman, W. H. A., &amp; Flache, A. (2022). The development of peer networks and academic performance in learning communities in higher education. <em>Learning and Instruction</em>, <em>80</em>, 101603. <a href="https://doi.org/10.1016/j.learninstruc.2022.101603">https://doi.org/10.1016/j.learninstruc.2022.101603</a></p>
+<p id="ref-coleman">Coleman, J. S. (1988). Social capital in the creation of human capital. <em>American Journal of Sociology</em>, <em>94</em>(Supplement), S95–S120. <a href="https://doi.org/10.1086/228943">https://doi.org/10.1086/228943</a></p>
+<p id="ref-freeman">Freeman, L. C. (1979). Centrality in social networks: Conceptual clarification. <em>Social Networks</em>, <em>1</em>(3), 215–239. <a href="https://doi.org/10.1016/0378-8733(78)90021-7">https://doi.org/10.1016/0378-8733(78)90021-7</a></p>
+<p id="ref-mauldin22">Mauldin, R. L., Barros-Lane, L., Tarbet, Z., Fujimoto, K., &amp; Narendorf, S. C. (2022). Cohort-based education and other factors related to student peer relationships: A mixed-methods social network analysis. <em>Education Sciences</em>, <em>12</em>(3), 205. <a href="https://doi.org/10.3390/educsci12030205">https://doi.org/10.3390/educsci12030205</a></p>
+<p id="ref-mauldin20">Mauldin, R. L., Narendorf, S. C., Herrera, S., &amp; Tarbet, Z. (2020). <em>Peer relationships among Master of Social Work students: Social network data</em> [Dataset]. Texas Data Repository Dataverse. <a href="https://doi.org/10.18738/T8/5ELWBV">https://doi.org/10.18738/T8/5ELWBV</a></p>
+<p id="ref-mauldin17">Mauldin, R. L., Narendorf, S. C., &amp; Mollhagen, A. (2017). Relationships among diverse peers in a cohort-based MSW program: A social network analysis. <em>Journal of Social Work Education</em>, <em>53</em>(4), 684–698. <a href="https://doi.org/10.1080/10437797.2017.1284628">https://doi.org/10.1080/10437797.2017.1284628</a></p>
+<p id="ref-mishra">Mishra, S. (2020). Social networks, social capital, social support and academic success in higher education: A systematic review with a special focus on ‘underrepresented’ students. <em>Educational Research Review</em>, <em>29</em>, 100307. <a href="https://doi.org/10.1016/j.edurev.2019.100307">https://doi.org/10.1016/j.edurev.2019.100307</a></p>
+<p id="ref-vignery">Vignery, K. L., &amp; Laurier, W. (2020). Achievement in student peer networks: A study of the selection process, peer effects and student centrality. <em>International Journal of Educational Research</em>, <em>99</em>, 101499. <a href="https://doi.org/10.1016/j.ijer.2019.101499">https://doi.org/10.1016/j.ijer.2019.101499</a></p>
+</section>
+      </div>
+      <p class="project-end"><a class="back-link" href="../"><span aria-hidden="true">←</span> Back to Projects</a></p>
+    </article>
+  </main>
+  <footer><span>© 2026 Zheng (Patrick) Tong</span><a href="mailto:zhengtongpatrick@connect.hku.hk">zhengtongpatrick@connect.hku.hk</a></footer>
+</body>
+</html>

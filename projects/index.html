@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Projects | Patrick (Zheng Tong)</title>
+  <meta name="description" content="Research and analytical projects by Patrick (Zheng Tong) on political communication, social mobility, education, legal institutions, and customer experience.">
+  <meta property="og:title" content="Projects | Patrick (Zheng Tong)">
+  <meta property="og:description" content="Substantive questions explored through computational text analysis, networks, prediction, and longitudinal research design.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="name" href="../#home">Patrick (Zheng Tong)</a>
+      <div class="nav-links">
+        <a href="../#home">Home</a><a href="./" aria-current="page">Projects</a>
+        <a href="../#papers">Conference Papers</a><a href="../#education">Education</a><a href="../#teaching">Teaching</a>
+        <a href="../CV_Patrick.pdf" target="_blank" rel="noopener">CV</a>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+    <header class="page-intro">
+      <h1>Projects</h1>
+      <p class="lead">Research and analytical work on political language, social opportunity, and the institutions and relationships that shape everyday life.</p>
+      <p class="project-summary">These projects bring substantive questions into conversation with computational and quantitative methods. They include conference research and coursework projects developed during my study.</p>
+    </header>
+    <div class="project-index">
+      <article class="project-entry project-entry-with-figure" id="upward-mobility">
+        <div>
+          <h2><a href="upward-mobility/">Can We Predict Upward Mobility?</a></h2>
+          <p class="subtitle">Machine Learning the Geography of Opportunity in the United States</p>
+          <p>How well do county characteristics predict the adult income ranks of children from lower-income families? Using 2,518 U.S. counties, this analysis compares linear regression, Lasso, a decision tree, and a random forest. The forest achieves the lowest held-out error, with a modest advantage over the linear models.</p>
+          <a class="project-link" href="upward-mobility/">Read project <span aria-hidden="true">→</span></a>
+        </div>
+        <a href="upward-mobility/#results" aria-label="Explore the upward mobility prediction results"><img class="project-thumbnail" src="../assets/projects/upward-mobility/predicted-vs-observed.png" width="925" height="653" alt="Observed and predicted county income ranks cluster near the equality line, with larger deviations at the extremes." loading="lazy" decoding="async"></a>
+      </article>
+
+      <article class="project-entry project-entry-with-figure" id="constitutional-language">
+        <div>
+        <h2><a href="constitutional-language/">Constitutional Echoes</a></h2>
+        <p class="subtitle">Comparing Global Preambles with the United States</p>
+        <p>Constitutional preambles articulate political membership, collective memory, and the purposes of government. This study compares 155 preambles through word frequencies, TF–IDF representations, clustering, and cosine similarity. Argentina and the Philippines are the closest matches to the U.S. preamble under both weighting schemes; the broader rankings and historical patterns depend on how resemblance is measured.</p>
+        <p>The analysis treats textual similarity as descriptive evidence of shared language. It does not establish borrowing or a causal history of American influence.</p>
+      
+          <a class="project-link" href="constitutional-language/">Read project <span aria-hidden="true">→</span></a>
+        </div>
+        <a href="constitutional-language/#history" aria-label="Explore results for constitutional language"><img class="project-thumbnail" src="../assets/projects/constitutional-language/similarity-by-decade.png" width="1146" height="1003" alt="Average preamble similarity across six constitutional decades." loading="lazy" decoding="async"></a>
+      </article>
+
+      <article class="project-entry project-entry-with-figure" id="legal-precedent-influence">
+        <div>
+        <h2><a href="legal-precedent-influence/">What Makes a Legal Precedent Influential?</a></h2>
+        <p class="subtitle">Mapping the U.S. Supreme Court Citation Network</p>
+        <p>A precedent can be frequently cited without occupying the same structural position as a case cited by other central decisions. This analysis compares citation counts and PageRank in a directed network of cases, checks their rankings against expert classifications, and traces citations to <em>Brown v. Board of Education</em> over time.</p>
+        <p>The two centrality measures identify different leading cases. Their partial agreement with expert judgments illustrates why citation prominence captures only one dimension of legal importance.</p>
+      
+          <a class="project-link" href="legal-precedent-influence/">Read project <span aria-hidden="true">→</span></a>
+        </div>
+        <a href="legal-precedent-influence/#brown" aria-label="Explore results for legal precedent influence"><img class="project-thumbnail" src="../assets/projects/legal-precedent-influence/brown-citations.png" width="1375" height="825" alt="Cumulative citations to Brown v. Board of Education." loading="lazy" decoding="async"></a>
+      </article>
+
+      <article class="project-entry project-entry-with-figure" id="migration-education">
+        <div>
+        <h2><a href="migration-education/">Moving to the City, Changing Educational Trajectories</a></h2>
+        <p class="subtitle">Rural-Origin Children in China</p>
+        <p>Family migration may expand access to resources while disrupting children's schooling. This study follows rural-origin children in the China Family Panel Studies from 2010 to 2014 and 2020, comparing children who transitioned into migration with those who remained non-migrant.</p>
+        <p>Matching and difference-in-differences estimation examine short-term parent-rated academic performance; matched logistic models examine later educational attainment. The reported pattern combines a negative short-term estimate with an imprecise long-term association. Causal interpretation depends on the identifying assumptions, including parallel trends, which cannot be directly tested with one pre-treatment wave.</p>
+      
+          <a class="project-link" href="migration-education/">Read project <span aria-hidden="true">→</span></a>
+        </div>
+        <a href="migration-education/#findings" aria-label="Explore results for migration education"><img class="project-thumbnail" src="../assets/projects/migration-education/migration-did.png" width="2880" height="1920" alt="Migrant children show smaller improvements in parent-rated educational outcomes than non-migrants." loading="lazy" decoding="async"></a>
+      </article>
+
+      <article class="project-entry project-entry-with-figure" id="exclusionary-populism">
+        <div>
+        <h2><a href="exclusionary-populism/">Exclusionary Populism in the U.S.</a></h2>
+        <p class="subtitle">Party Patterns and Trump's Rhetoric</p>
+        <p>Who is included in “we,” and who is positioned as “they”? This study analyzes U.S. presidential campaign rhetoric through a party–month panel, examining pronoun balance, references to elites and “the people,” and an Exclusionary Populism Index. It situates Trump's language within a longer history of partisan boundary-making.</p>
+        <p>Dictionary measures and lagged models connect lexical patterns to questions of political membership. The temporal comparisons describe associations rather than causal effects of candidates or historical events.</p>
+      
+          <a class="project-link" href="exclusionary-populism/">Read project <span aria-hidden="true">→</span></a>
+        </div>
+        <a href="exclusionary-populism/#index" aria-label="Explore results for exclusionary populism"><img class="project-thumbnail" src="../assets/projects/exclusionary-populism/epi-history.jpg" width="7758" height="3133" alt="Composite exclusionary-populism index across campaign periods, relative to each party’s baseline." loading="lazy" decoding="async"></a>
+      </article>
+
+      <article class="project-entry project-entry-with-figure" id="campaign-topic-structure">
+        <div>
+        <h2><a href="campaign-topic-structure/">Thematic Divides in Trump-Era Campaign Rhetoric</a></h2>
+        <p class="subtitle">Candidates, Election Cycles, and Historical Change</p>
+        <p>How do policy, threat, and grievance organize campaign speeches? This analysis combines rhetorical dictionaries with structural topic models to compare Trump with Clinton, Biden, and Harris, and to examine variation across Trump's three campaigns between 2015 and 2024.</p>
+        <p>Separate comparisons address candidate differences, election cycles, and the periods before and after March 2020. Topic labels require contextual interpretation, and the historical comparison does not identify a pandemic effect.</p>
+      
+          <a class="project-link" href="campaign-topic-structure/">Read project <span aria-hidden="true">→</span></a>
+        </div>
+        <a href="campaign-topic-structure/#candidates" aria-label="Explore results for campaign topic structure"><img class="project-thumbnail" src="../assets/projects/campaign-topic-structure/candidate-contrasts.png" width="1826" height="804" alt="Topic-prevalence differences between Trump and pooled Democratic opponents, with uncertainty intervals." loading="lazy" decoding="async"></a>
+      </article>
+
+      <article class="project-entry project-entry-with-figure" id="peer-centrality">
+        <div>
+        <h2><a href="peer-centrality/">Peer Centrality and Academic Performance</a></h2>
+        <p class="subtitle">Evidence from a Cohort-Based MSW Program</p>
+        <p>Students' positions in academic, friendship, and professional networks may reflect both access to support and prior achievement. Using repeated peer nominations and GPA records, this study examines whether network prominence remains associated with later grades after accounting for earlier performance.</p>
+        <p>Early centrality is positively associated with subsequent GPA in separate adjusted models. Later associations weaken substantially after controlling for prior in-program GPA, underscoring the difficulty of separating peer selection from influence.</p>
+      
+          <a class="project-link" href="peer-centrality/">Read project <span aria-hidden="true">→</span></a>
+        </div>
+        <a href="peer-centrality/#results" aria-label="Explore results for peer centrality"><img class="project-thumbnail" src="../assets/projects/peer-centrality/adjusted-associations.png" width="1180" height="806" alt="Early and later adjusted associations between centrality and GPA." loading="lazy" decoding="async"></a>
+      </article>
+
+      <article class="project-entry project-entry-with-figure" id="customer-experience">
+        <div>
+        <h2><a href="customer-experience/">Beyond Satisfaction</a></h2>
+        <p class="subtitle">Customer Experience, Repurchase Intentions, and Complaints</p>
+        <p>How do evaluations of quality and value relate to satisfaction, willingness to repurchase, and complaint behavior? This analysis studies these distinct responses using 7,700 customer records, combining linear and penalized regression for rating outcomes with tree-based models for complaints.</p>
+        <p>Correlated experience measures and an uneven distribution of complaints make model interpretation and evaluation central to the research question. Repurchase intention is treated as a reported attitude, and the models describe predictive associations rather than the effects of service interventions.</p>
+      
+          <a class="project-link" href="customer-experience/">Read project <span aria-hidden="true">→</span></a>
+        </div>
+        <a href="customer-experience/#complaints" aria-label="Explore results for customer experience"><img class="project-thumbnail" src="../assets/projects/customer-experience/complaint-classification.png" width="1027" height="859" alt="Reported complaint classification includes many missed complaints." loading="lazy" decoding="async"></a>
+      </article>
+
+      <article class="project-entry project-entry-with-figure" id="student-stress">
+        <div>
+        <h2><a href="student-stress/">Beyond Workload</a></h2>
+        <p class="subtitle">Social Support, Self-Esteem, and Student Stress</p>
+        <p>Academic workload is one part of a wider set of pressures and resources associated with student stress. This study uses 1,100 records from the Student Stress Monitoring dataset to examine high stress in relation to psychological measures, academic demands, and social circumstances.</p>
+        <p>Reported models associate social support and self-esteem with lower likelihood of high stress, and headache and peer pressure with higher likelihood. These cross-sectional associations motivate further research; they do not establish that changing a predictor would reduce stress.</p>
+      
+          <a class="project-link" href="student-stress/">Read project <span aria-hidden="true">→</span></a>
+        </div>
+        <a href="student-stress/#associations" aria-label="Explore results for student stress"><img class="project-thumbnail" src="../assets/projects/student-stress/stress-associations.png" width="1237" height="986" alt="Reported logistic associations with high stress." loading="lazy" decoding="async"></a>
+      </article>
+    </div>
+    <p class="project-end"><a class="back-link" href="../#selected-projects"><span aria-hidden="true">←</span> Back to selected projects</a></p>
+  </main>
+  <footer><span>© 2026 Zheng (Patrick) Tong</span><a href="mailto:zhengtongpatrick@connect.hku.hk">zhengtongpatrick@connect.hku.hk</a></footer>
+</body>
+</html>

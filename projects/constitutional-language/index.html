@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Constitutional Echoes | Patrick (Zheng Tong)</title>
+  <meta name="description" content="Constitutional preambles express political membership, shared histories, and the purposes of government. This project compares 155 preambles to ask which texts resemble the United States, how that answer changes with the measurement of language, and whether resemblance follows a clear historical trend.">
+  <meta property="og:title" content="Constitutional Echoes | Patrick (Zheng Tong)">
+  <meta property="og:description" content="Constitutional preambles express political membership, shared histories, and the purposes of government. This project compares 155 preambles to ask which texts resemble the United States, how that answer changes with the measurement of language, and whether resemblance follows a clear historical trend.">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="name" href="../../#home">Patrick (Zheng Tong)</a>
+      <div class="nav-links">
+        <a href="../../#home">Home</a><a href="../" aria-current="location">Projects</a>
+        <a href="../../#papers">Conference Papers</a><a href="../../#education">Education</a><a href="../../#teaching">Teaching</a>
+        <a href="../../CV_Patrick.pdf" target="_blank" rel="noopener">CV</a>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+    <article>
+      <header class="page-intro">
+        <a class="back-link" href="../"><span aria-hidden="true">←</span> Back to Projects</a>
+        <h1>Constitutional Echoes</h1>
+        <p class="project-subtitle">Comparing Global Preambles with the United States</p>
+        <p class="project-summary">Constitutional preambles express political membership, shared histories, and the purposes of government. This project compares 155 preambles to ask which texts resemble the United States, how that answer changes with the measurement of language, and whether resemblance follows a clear historical trend.</p>
+      </header>
+      <nav class="project-toc" aria-label="On this page"><a href="#question">Research question</a><a href="#corpus">Corpus</a><a href="#clusters">Textual patterns</a><a href="#neighbors">Closest matches</a><a href="#interpretation">Interpretation</a></nav>
+      <div class="project-body">
+<section id="question"><h2>What counts as a constitutional echo?</h2>
+<p>Constitutional preambles share a language of rights, sovereignty, religion, and national unity. This project asks which preambles most resemble the United States, whether the answer changes when common words receive less weight, and whether similarity follows a historical trajectory. Shared vocabulary provides evidence of resemblance; documentary history is needed to establish influence.</p>
+<p>Preambles state collective purposes and political identities as well as introducing legal institutions. Their resemblance can arise through conventional declarations of sovereignty or more distinctive formulations of rights and national purpose. Comparing several representations helps separate vocabulary that is common to this genre from wording that makes a particular pair of texts stand out.</p>
+
+<p>The comparative question follows the text-analysis approach in <span data-cites="imai17">Imai (2017)</span>: constitutional influence becomes empirically approachable by first examining resemblance among preambles. These opening statements provide a common focus on guiding purposes and principles, while their language also expresses national histories, religious commitments, and collective identities. Similarity can therefore identify texts worth comparing closely before historical evidence is used to explain why they resemble one another.</p>
+
+</section>
+<section id="corpus"><h2>A comparative corpus of constitutional preambles</h2>
+<p>The <a href="https://kosukeimai.github.io/qss-package/reference/constitution.html">constitutional preamble corpus distributed with Kosuke Imai’s Quantitative Social Science</a> collects preamble text with a country identifier and constitutional year. It provides a common set of English texts for comparing the language used to introduce national constitutions. Each document is one country’s preamble, rather than a sequence of every historical revision.</p>
+<p>The analysis covers 155 preambles. Lowercasing and removal of punctuation, numbers, symbols, URLs, and English stopwords produce 4,716 features; word forms are retained without stemming. Raw term frequencies emphasize words used often. TF–IDF downweights words widespread across the corpus. Cosine similarity compares the direction of these vectors, reducing the direct influence of document length.</p>
+<p>The U.S. text illustrates the distinction. Raw counts emphasize repeated terms such as “united,” “states,” and “establish”; TF–IDF gives more prominence to distinctive words including “tranquility,” “ordain,” and “posterity.” Rarity here means rarity within this corpus, not greater constitutional importance. Retaining unstemmed word forms preserves distinctions in the legal vocabulary, while also treating related forms as separate features.</p>
+
+<p>The computational representation makes the meaning of “similar” explicit <span data-cites="imai17">(Imai, 2017)</span>. Frequent shared terms locate broad constitutional vocabulary; weighting by corpus rarity asks a narrower question about distinctive overlap. This project uses both views because a common declaration of sovereignty and a shared unusual formulation need not carry the same historical implication. Neither representation observes a transmission path between drafters.</p>
+
+</section>
+<section id="clusters"><h2>Four patterns of constitutional language</h2>
+<p>K-means clustering uses unit-normalized TF–IDF vectors, four clusters, and 50 random starts. The clusters contain 7, 42, 85, and 21 texts. Characteristic vocabulary suggests Caribbean and Commonwealth traditions, religious and legal formulations, statehood and citizenship, and rights or international-charter references. These are interpretive labels for overlapping textual traditions.</p>
+<figure class="research-figure"><img src="../../assets/projects/constitutional-language/preamble-clusters.png" width="1384" height="831" alt="PCA projection of constitutional preambles, colored by four k-means clusters." loading="lazy" decoding="async"><figcaption><strong>Figure 1. Preambles in a reduced textual space.</strong> The PCA visualization displays the four clusters obtained from the full TF–IDF representation. Distances in this projection retain only part of the original information.<br><a class="figure-link" href="../../assets/projects/constitutional-language/preamble-clusters.png">View full-size figure</a></figcaption></figure>
+<p>The small Caribbean cluster is especially recognizable as a regional grouping. Other clusters are broader: religious invocations and formal legal wording can appear together, while citizenship and statehood language spans many countries. The PCA view helps locate these groupings, but the clustering itself uses the full textual representation. Apparent closeness on two axes is therefore an incomplete account of why texts belong together.</p>
+</section>
+<section id="neighbors"><h2>The closest matches depend on the weighting</h2>
+<p>Argentina and the Philippines are the closest matches under both representations. Raw frequencies also place Liberia and the United Arab Emirates near the top, while TF–IDF brings Bhutan and Seychelles into the top five. Common constitutional language and more distinctive vocabulary therefore produce different neighborhoods around the U.S. text.</p>
+<figure class="research-figure"><img src="../../assets/projects/constitutional-language/raw-neighbors.png" width="1084" height="644" alt="Raw-frequency cosine ranking led by Argentina and the Philippines, followed by Liberia and the United Arab Emirates." loading="lazy" decoding="async"><figcaption><strong>Figure 2. Nearest preambles using raw frequencies.</strong> The ten largest cosine similarities to the U.S. preamble. Argentina (0.367) and the Philippines (0.321) lead this representation. Scores measure word-vector resemblance, not the probability of historical borrowing.<br><a class="figure-link" href="../../assets/projects/constitutional-language/raw-neighbors.png">View full-size figure</a></figcaption></figure>
+<figure class="research-figure"><img src="../../assets/projects/constitutional-language/tfidf-neighbors.png" width="1096" height="653" alt="TF–IDF nearest-neighbor ranking led by Argentina and the Philippines, with Ghana, Bhutan, and Seychelles next." loading="lazy" decoding="async"><figcaption><strong>Figure 3. Nearest preambles after TF–IDF weighting.</strong> Argentina (0.209), the Philippines (0.196), Ghana (0.122), Bhutan (0.095), and Seychelles (0.082) form the top five. TF–IDF changes the feature weights; score magnitudes should not be compared directly with the raw-frequency scale.<br><a class="figure-link" href="../../assets/projects/constitutional-language/tfidf-neighbors.png">View full-size figure</a></figcaption></figure>
+<p>Liberia moves from third under raw frequencies to twelfth under TF–IDF, while Bhutan moves from ninth to fourth. These changes concern the same texts; they result from changing the weight attached to shared terms. Argentina and the Philippines remain leading comparisons even after this adjustment, making their resemblance less dependent on only the most widespread constitutional vocabulary.</p>
+
+</section>
+<section id="history"><h2>A peak around 1990</h2>
+<p>Both representations reach their highest decade average in the bin ending in 1990. Raw-frequency similarity subsequently falls; TF–IDF rebounds slightly in the last bin. Linear and quadratic regressions on the six averages do not establish a statistically clear secular trend.</p>
+<figure class="research-figure"><img src="../../assets/projects/constitutional-language/similarity-by-decade.png" width="1146" height="1003" alt="Both word-frequency and TF–IDF mean similarity peak in the decade ending in 1990; the final TF–IDF mean rises slightly." loading="lazy" decoding="async"><figcaption><strong>Figure 4. Average resemblance by constitutional decade.</strong> The six bins contain 3, 4, 27, 20, 48, and 29 preambles respectively; lines connect observed bin averages and are not fitted trends. Different vertical scales are used for the two representations.<br><a class="figure-link" href="../../assets/projects/constitutional-language/similarity-by-decade.png">View full-size figure</a></figcaption></figure><p>The bins compare different preambles grouped by their constitutional dates. They do not trace the same countries through time, and their unequal sizes make the earliest averages particularly sensitive to individual documents.</p>
+<p>The common peak under both representations suggests that the bin ending in 1990 is distinctive in this collection, even though the later paths diverge. It does not identify a historical turning point in American influence. With only six aggregate observations, the fitted trend tests also have little information about shorter episodes or differences among countries within a decade.</p>
+
+</section>
+<section id="interpretation"><h2>Resemblance as a starting point for historical inquiry</h2>
+<p>The stable first two neighbors offer a focused starting point for close reading, while the shifting wider ranking shows how measurement shapes interpretation. Similar wording may reflect borrowing, a common source, translation, or conventional legal language.</p>
+<p>English rendering, edition choices, and incomplete historical coverage limit what the corpus can establish. Text analysis can identify promising comparisons; it cannot replace evidence about how constitutional language traveled.</p>
+<p>The analysis thus offers three levels of comparison: broad families of constitutional language, particular neighbors of the U.S. preamble, and differences across dated groups of documents. Agreement across these views can guide the selection of texts for historical investigation. Disagreement is equally informative because it reveals which conclusions depend on weighting, projection, or the composition of the corpus.</p>
+
+</section>
+<section id="references" class="project-references" aria-labelledby="references-heading"><h2 id="references-heading">References</h2>
+<p id="ref-imai17">Imai, K. (2017). <em>Quantitative social science: An introduction</em>. Princeton University Press.</p>
+</section>
+      </div>
+      <p class="project-end"><a class="back-link" href="../"><span aria-hidden="true">←</span> Back to Projects</a></p>
+    </article>
+  </main>
+  <footer><span>© 2026 Zheng (Patrick) Tong</span><a href="mailto:zhengtongpatrick@connect.hku.hk">zhengtongpatrick@connect.hku.hk</a></footer>
+</body>
+</html>

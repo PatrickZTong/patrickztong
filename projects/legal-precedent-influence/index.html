@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>What Makes a Legal Precedent Influential? | Patrick (Zheng Tong)</title>
+  <meta name="description" content="A case may attract many citations, or it may be cited by decisions that are themselves central to a body of law. This project compares those two forms of prominence in a directed citation network and examines what each reveals—and leaves unresolved—about legal importance.">
+  <meta property="og:title" content="What Makes a Legal Precedent Influential? | Patrick (Zheng Tong)">
+  <meta property="og:description" content="A case may attract many citations, or it may be cited by decisions that are themselves central to a body of law. This project compares those two forms of prominence in a directed citation network and examines what each reveals—and leaves unresolved—about legal importance.">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="name" href="../../#home">Patrick (Zheng Tong)</a>
+      <div class="nav-links">
+        <a href="../../#home">Home</a><a href="../" aria-current="location">Projects</a>
+        <a href="../../#papers">Conference Papers</a><a href="../../#education">Education</a><a href="../../#teaching">Teaching</a>
+        <a href="../../CV_Patrick.pdf" target="_blank" rel="noopener">CV</a>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+    <article>
+      <header class="page-intro">
+        <a class="back-link" href="../"><span aria-hidden="true">←</span> Back to Projects</a>
+        <h1>What Makes a Legal Precedent Influential?</h1>
+        <p class="project-subtitle">Mapping the U.S. Supreme Court Citation Network</p>
+        <p class="project-summary">A case may attract many citations, or it may be cited by decisions that are themselves central to a body of law. This project compares those two forms of prominence in a directed citation network and examines what each reveals—and leaves unresolved—about legal importance.</p>
+      </header>
+      <nav class="project-toc" aria-label="On this page"><a href="#question">Research question</a><a href="#network">Citation network</a><a href="#rankings">Rankings</a><a href="#brown">Brown over time</a><a href="#interpretation">Interpretation</a></nav>
+      <div class="project-body">
+<section id="question"><h2>Frequency and structural position</h2>
+<p>A decision may be cited often, or be cited by cases that are themselves central to legal argument. This project compares incoming citation counts with PageRank, relates leading cases to expert classifications, and traces the citation history of <em>Brown v. Board of Education</em>. These measures capture different aspects of network prominence.</p>
+<p>Precedent links a current legal argument to earlier decisions. Counting these references treats every incoming citation equally; a recursive measure also considers where the citation comes from in the wider network. The contrast is useful precisely because a case can have broad immediate visibility without occupying the same position in the longer chains connecting decisions.</p>
+
+<p>The norm of <em>stare decisis</em> grounds judicial reasoning in earlier decisions, making citations a trace of how opinions invoke precedent. The network approach developed in <span data-cites="imai22">Imai and Williams (2022)</span> turns that relation into a directed structure: the citing opinion points to the precedent it uses. This provides a way to examine authority through repeated reference and through chains of reference, while leaving the legal meaning of each citation to contextual analysis.</p>
+
+</section>
+<section id="network"><h2>The Supreme Court citation network</h2>
+<p>The <a href="https://doi.org/10.7910/DVN/XMBQL6">Supreme Court citation network compiled by James H. Fowler and Sangick Jeon</a> connects majority opinions and the cases they cite in the <em>United States Reports</em>, with records spanning 1754–2002. The Harvard Dataverse replication archive accompanies their study of precedent authority. Its case records and directed references support a comparison of citation frequency with position in chains of precedent. Early reporter cases predate the Supreme Court itself.</p>
+<p>The analytical network contains 30,288 cases and 216,738 citation edges. Each edge points from a citing case to a cited case. Incoming degree counts references received; outgoing degree counts references made. Case attributes include identifiers, dates, and expert-importance indicators.</p>
+<figure class="research-figure"><img src="../../assets/projects/legal-precedent-influence/incoming-citations.png" width="1332" height="831" alt="Histogram showing a strongly right-skewed distribution of citations received by cases." loading="lazy" decoding="async"><figcaption><strong>Figure 1. A concentrated distribution of incoming citations.</strong> Most cases receive few references. Mean incoming degree is approximately 7.16, the median is 3, and the maximum is 248. Dashed lines mark the 5th, 25th, 50th, 75th, and 95th percentiles.<br><a class="figure-link" href="../../assets/projects/legal-precedent-influence/incoming-citations.png">View full-size figure</a></figcaption></figure>
+<figure class="research-figure"><img src="../../assets/projects/legal-precedent-influence/outgoing-citations.png" width="1332" height="831" alt="Histogram of outgoing citation counts, with most cases making relatively few references." loading="lazy" decoding="async"><figcaption><strong>Figure 2. How many earlier cases does a decision cite?</strong> Outgoing degree describes references made, a different dimension of citation behavior. The largest outgoing degree is 195. Dashed lines mark the same five distribution percentiles as in Figure 1.<br><a class="figure-link" href="../../assets/projects/legal-precedent-influence/outgoing-citations.png">View full-size figure</a></figcaption></figure>
+<p>The two degree distributions describe complementary sides of the same edges. Their means are equal because every citation contributes once to a citing case’s outgoing degree and once to a cited case’s incoming degree. Their shapes need not match. The long incoming tail shows how unevenly references accumulate, whereas outgoing degree describes how extensively decisions cite other cases.</p>
+
+</section>
+<section id="citation-practice"><h2>Citation practice changes across judicial eras</h2>
+<p>Grouping cases by decision year reveals how citation practice and later reception vary together. The solid line shows average incoming citations received by cases decided in that year; the dashed line shows average outgoing citations made by those cases. Red vertical markers identify the Warren Court period, 1953–1969.</p>
+<figure class="research-figure"><img src="../../assets/projects/legal-precedent-influence/citations-by-year.png" width="1384" height="788" alt="Average incoming citations shown as a solid line and outgoing citations as a dashed line by decision year, with red vertical markers at 1953 and 1969." loading="lazy" decoding="async"><figcaption><strong>Figure 3. Average inward/outward citations per case by year.</strong> The Warren Court markers (1953 and 1969) bracket a relative downturn or flattening compared with the elevated values immediately before it. Outgoing citations rise strongly after 1969. The late fall in incoming citations reflects limited time for newer cases to receive subsequent references, not proof of diminished legal importance.<br><a class="figure-link" href="../../assets/projects/legal-precedent-influence/citations-by-year.png">View full-size figure</a></figcaption></figure>
+<p>During much of the Warren Court period, both averages occupy a lower, flatter band than the immediately preceding mid-century peaks. After 1969, average outgoing citations rise strongly, indicating increasingly citation-dense opinions in later decades. This is a historically distinctive descriptive pattern; it does not establish a causal effect of the Warren Court on citation behavior.</p>
+<p>The series have different temporal exposure. Incoming citations require later decisions: recent cases have had fewer subsequent years in the observed corpus in which to be cited. This right truncation mechanically depresses their average indegree near the end of the series. Outgoing degree is much less affected because citations made are observed when an opinion is written. The end-of-series divergence therefore cannot show that recent precedents have become less important.</p>
+</section>
+<section id="rankings"><h2>Two rankings of influential precedents</h2>
+<p><em>Gregg v. Georgia</em> leads incoming citations with 248, followed by <em>Miranda v. Arizona</em> with 221. PageRank instead places <em>Brown v. Maryland</em> and <em>Gibbons v. Ogden</em> first. Brown v. Maryland is distinct from Brown v. Board of Education.</p>
+<figure class="research-figure"><img src="../../assets/projects/legal-precedent-influence/centrality-rankings.png" width="1800" height="1026" alt="Two top-ten lists linked at McCulloch v. Maryland, ranked third in both, and Gregg v. Georgia, ranked first by incoming citations and tenth by PageRank." loading="lazy" decoding="async"><figcaption><strong>Figure 4. The top ten under incoming degree and PageRank.</strong> Lines connect McCulloch and Gregg, the only shared cases. Vertical positions encode ordinal rank, not differences in centrality scores; long case names are abbreviated.<br><a class="figure-link" href="../../assets/projects/legal-precedent-influence/centrality-rankings.png">View full-size figure</a></figcaption></figure>
+<p>Only two cases appear in both lists. PageRank elevates decisions cited by other structurally prominent cases, including some with moderate citation counts. The difference is substantive: frequency and recursive centrality describe different forms of prominence.</p>
+<p>Against the expert indicators, both lists include eight Oxford-selected cases. The incoming-citation top ten includes eight LII-selected cases, compared with five for PageRank. These small comparisons provide context, not a definitive ground truth for legal importance.</p>
+<p>PageRank is therefore more than a rescaling of citation counts. Among its leading cases, Adams v. New York has 36 incoming references and Gilman v. Philadelphia has 55, far fewer than the incoming-degree leader. Their positions depend on the structure of the cases citing them. The ranking comparison makes this distinction visible without suggesting that the distance between ranks measures a proportional difference in authority.</p>
+
+<p>Both measures are exposure-sensitive: older cases have had more opportunities to receive citations, so the rankings should not be interpreted as age-adjusted measures of legal influence.</p>
+<p>Qualitative evaluation supplies a different standard. <span data-cites="hall">Hall’s (1999)</span> <em>The Oxford Guide to United States Supreme Court Decisions</em> provides one of the expert selections represented in the case data. Comparing its judgments with centrality asks whether structural prominence aligns with recognized legal significance. Disagreement is informative because doctrinal importance and position in a citation network need not coincide.</p>
+
+</section>
+<section id="brown"><h2>Following Brown through later decisions</h2>
+<p>The cumulative citations to <em>Brown v. Board of Education</em> reach 154 within the observed corpus. Its rising trajectory shows prominence accumulating over decades, something a single ranking conceals.</p>
+<figure class="research-figure"><img src="../../assets/projects/legal-precedent-influence/brown-citations.png" width="1375" height="825" alt="Cumulative citation history of Brown v. Board of Education rising to 154 references." loading="lazy" decoding="async"><figcaption><strong>Figure 5. The citation history of Brown v. Board of Education.</strong> Cumulative incoming references through the end of the corpus in 2002. The late flattening concerns accumulated references within this observation window; it does not establish declining legal authority.<br><a class="figure-link" href="../../assets/projects/legal-precedent-influence/brown-citations.png">View full-size figure</a></figcaption></figure>
+<p>Citations can endorse, distinguish, criticize, or otherwise discuss a precedent. The network records the reference, not its meaning, and later cases have less time to receive citations.</p>
+<p>The cumulative curve rises slowly at first, then more rapidly from around the 1960s, before flattening toward the end of the observed period. Its slope reflects the pace of additional citations, while its height records everything accumulated so far. A plateau therefore concerns the arrival of new references in this corpus, rather than the disappearance of earlier citations or the reversal of a legal holding.</p>
+
+<p>Brown’s cumulative trajectory is also embedded in changing citation practices. The later rise in outgoing citations means that opportunities for precedents to be invoked expand as opinions become more citation-dense. This provides context for Brown’s accumulation of references, without establishing how much of its trajectory reflects changing writing practices rather than its particular doctrinal role.</p>
+
+</section>
+<section id="interpretation"><h2>Influence depends partly on its measurement</h2>
+<p>Incoming degree makes citation frequency visible; PageRank emphasizes chains of authority; citation histories show how prominence develops. Their disagreement argues for reading the measures together. Distinguishing citation contexts and comparing cases with similar exposure time would bring the network account closer to substantive legal interpretation.</p>
+<p>The expert comparison adds another perspective because the Oxford and LII indicators reflect selected judgments of case importance. Agreement with a top-ten list is informative, but absence from an expert selection does not establish that a decision lacks importance. Nor does agreement among several measures settle the meaning of the citations. The strongest interpretation combines structural evidence with the substantive legal context of particular cases.</p>
+
+</section>
+<section id="references" class="project-references" aria-labelledby="references-heading"><h2 id="references-heading">References</h2>
+<p id="ref-hall">Hall, K. L. (Ed.). (1999). <em>The Oxford guide to United States Supreme Court decisions</em>. Oxford University Press.</p>
+<p id="ref-imai22">Imai, K., &amp; Williams, N. W. (2022). <em>Quantitative social science: An introduction in tidyverse</em>. Princeton University Press.</p>
+</section>
+      </div>
+      <p class="project-end"><a class="back-link" href="../"><span aria-hidden="true">←</span> Back to Projects</a></p>
+    </article>
+  </main>
+  <footer><span>© 2026 Zheng (Patrick) Tong</span><a href="mailto:zhengtongpatrick@connect.hku.hk">zhengtongpatrick@connect.hku.hk</a></footer>
+</body>
+</html>

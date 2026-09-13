@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="720pt" height="304.128pt" viewBox="0 0 720 304.128" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:description>Economic dictionary shares for Trump: 1.44% in 2016 and 0.60% in 2024.</dc:description>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 304.128 
+L 720 304.128 
+L 720 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 72 237.21984 
+L 705.6 237.21984 
+L 705.6 15.2064 
+L 72 15.2064 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 72 237.21984 
+L 72 15.2064 
+" clip-path="url(#p773513bc0d)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.13; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2"/>
+     <g id="text_1">
+      <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #425567" x="72" y="256.337028" transform="rotate(-0 72 256.337028)">0.00%</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 253.028571 237.21984 
+L 253.028571 15.2064 
+" clip-path="url(#p773513bc0d)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.13; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4"/>
+     <g id="text_2">
+      <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #425567" x="253.028571" y="256.337028" transform="rotate(-0 253.028571 256.337028)">0.50%</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 434.057143 237.21984 
+L 434.057143 15.2064 
+" clip-path="url(#p773513bc0d)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.13; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_3">
+      <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #425567" x="434.057143" y="256.337028" transform="rotate(-0 434.057143 256.337028)">1.00%</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 615.085714 237.21984 
+L 615.085714 15.2064 
+" clip-path="url(#p773513bc0d)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.13; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_4">
+      <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #425567" x="615.085714" y="256.337028" transform="rotate(-0 615.085714 256.337028)">1.50%</text>
+     </g>
+    </g>
+    <g id="text_5">
+     <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #243748" x="388.8" y="272.337965" transform="rotate(-0 388.8 272.337965)">Economic dictionary share in Trump’s speeches</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_9"/>
+     <g id="text_6">
+      <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #425567" x="62" y="62.585768" transform="rotate(-0 62 62.585768)">2016</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_10"/>
+     <g id="text_7">
+      <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #425567" x="62" y="198.95766" transform="rotate(-0 62 198.95766)">2024</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 72 25.29792 
+L 593.362286 25.29792 
+L 593.362286 90.756428 
+L 72 90.756428 
+z
+" clip-path="url(#p773513bc0d)" style="fill: #b65a61"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 72 161.669812 
+L 289.234286 161.669812 
+L 289.234286 227.12832 
+L 72 227.12832 
+z
+" clip-path="url(#p773513bc0d)" style="fill: #b65a61"/>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #243748" x="600.362286" y="61.404127" transform="rotate(-0 600.362286 61.404127)">1.44%</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #243748" x="296.234286" y="197.776019" transform="rotate(-0 296.234286 197.776019)">0.60%</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p773513bc0d">
+   <rect x="72" y="15.2064" width="633.6" height="222.01344"/>
+  </clipPath>
+ </defs>
+</svg>

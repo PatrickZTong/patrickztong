@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Can We Predict Upward Mobility? | Patrick (Zheng Tong)</title>
+  <meta name="description" content="Comparing linear regression, Lasso, a decision tree, and a random forest to predict county-level intergenerational mobility in the United States.">
+  <meta property="og:title" content="Can We Predict Upward Mobility? | Patrick (Zheng Tong)">
+  <meta property="og:description" content="A county-level comparison of predictive models, with held-out results, research figures, and an interpretation of the geography of opportunity.">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="name" href="../../#home">Patrick (Zheng Tong)</a>
+      <div class="nav-links">
+        <a href="../../#home">Home</a><a href="../" aria-current="location">Projects</a>
+        <a href="../../#papers">Conference Papers</a><a href="../../#education">Education</a><a href="../../#teaching">Teaching</a>
+        <a href="../../CV_Patrick.pdf" target="_blank" rel="noopener">CV</a>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+    <article>
+      <header class="page-intro">
+        <a class="back-link" href="../"><span aria-hidden="true">←</span> Back to Projects</a>
+        <h1>Can We Predict Upward Mobility?</h1>
+        <p class="project-subtitle">Machine Learning the Geography of Opportunity in the United States</p>
+        <p class="project-summary">Children from similarly placed families reach different positions in the income distribution depending on where they grow up. This project asks how well county characteristics predict those outcomes. A comparison of four models finds that a random forest has the lowest error on held-out counties, while its advantage over linear alternatives remains modest.</p>
+      </header>
+      <nav class="project-toc" aria-label="On this page"><a href="#question">Research question</a><a href="#data">Data</a><a href="#strategy">Methods</a><a href="#results">Results</a><a href="#interpretation">Interpretation</a></nav>
+      <div class="project-body">
+<section id="question"><h2>How much of opportunity is predictable?</h2>
+<p>Counties differ in the adult outcomes reached by children from lower-income families. How much of that variation can be recovered from social, economic, demographic, and health characteristics? This project compares linear, regularized, and tree-based models on counties excluded from fitting. The task is prediction, rather than identifying which characteristics cause mobility.</p>
+<p>The comparison asks whether a flexible model finds useful structure beyond an additive account of county conditions. This matters because the predictors describe overlapping aspects of places: economic deprivation, family composition, education, and health need not vary independently. A model can predict well from their combined pattern even when the contribution of any one characteristic is difficult to isolate.</p>
+
+<p>Research on the geography of intergenerational mobility documents substantial differences in children’s adult outcomes across places <span data-cites="chetty14">(Chetty et al., 2014)</span>. The Opportunity Atlas extends this perspective by linking adult outcomes to childhood neighborhoods, distinguishing the opportunities associated with growing up in a place from the incomes of the adults currently living there <span data-cites="atlas">(Chetty et al., 2025)</span>. This motivates asking how much information about children’s later outcomes is contained in a county’s broader social and economic profile.</p>
+<p>The literature also distinguishes place effects from residential selection. <span data-cites="chetty18">Chetty and Hendren (2018)</span> use childhood exposure following family moves to investigate neighborhood effects. The present county-level prediction exercise has a different design: it compares forecasting performance using observed characteristics, without an exposure-based identification strategy. Accurate predictions therefore do not establish that changing a highly ranked county characteristic would change a child’s outcome.</p>
+
+</section>
+<section id="data"><h2>Counties, childhood origins, and adult income</h2>
+<p>The <a href="https://www.opportunityatlas.org/">Opportunity Atlas</a> maps adult outcomes back to childhood places using linked, anonymized longitudinal records. Developed by researchers at Harvard, Brown, and the U.S. Census Bureau, it provides income outcomes by parental income and geography. The <a href="https://opportunityinsights.org/data/">Opportunity Insights data library</a> distributes aggregate estimates and documentation. County characteristics from <a href="https://datacommons.org/">Data Commons</a>, which brings statistics from multiple public sources into a common framework, add context about local social and economic conditions.</p>
+<p>This analysis uses an extract of 2,518 counties with at least 10,000 residents and 121 complete numeric predictors. The outcome is mean adult household-income rank in 2014–2015 for children whose parents were at the 25th national income percentile. It is stored on a 0–1 scale: 0.40 represents the 40th percentile. Counties are the units, so the models do not predict individual children’s incomes.</p>
+<p>A random split assigns 1,259 counties to training and 1,259 to testing. Predictors cover poverty, education, household composition, density, and health. Correlations among these measures make the extract useful for comparing regularization with nonlinear models.</p>
+<p>The training and test outcome distributions are similar, with means near 0.413 and medians near 0.411. This gives the models broadly comparable prediction tasks. The complete predictor fields also keep differences in missing-data exclusions from driving the comparison. Similar outcome distributions, however, do not establish that a model will transfer to a geographically distinct set of counties.</p>
+
+</section>
+<section id="strategy"><h2>A common task, four prediction models</h2>
+<p>OLS uses all predictors as a linear benchmark. Lasso shrinks coefficients and uses ten-fold cross-validation to choose a penalty. A regression tree is pruned at the complexity parameter minimizing ten-fold validation error. A random forest averages 1,000 trees, with 10 candidate predictors per split and a minimum node size of five.</p>
+<figure class="research-figure"><img src="../../assets/projects/upward-mobility/lasso-validation.png" width="1384" height="715" alt="Lasso cross-validation error falls as the penalty relaxes and reaches its minimum at a comparatively small penalty." loading="lazy" decoding="async"><figcaption><strong>Figure 1. Selecting the Lasso penalty.</strong> The cross-validation curve displays mean squared error across penalty values, with uncertainty bars and retained-coefficient counts along the top. The selected penalty minimizes validation error within the training sample.<br><a class="figure-link" href="../../assets/projects/upward-mobility/lasso-validation.png">View full-size figure</a></figcaption></figure>
+<figure class="research-figure"><img src="../../assets/projects/upward-mobility/pruned-tree.png" width="1384" height="867" alt="Original pruned regression tree with repeated predictor splits and terminal-node income-rank predictions." loading="lazy" decoding="async"><figcaption><strong>Figure 2. The fitted regression tree.</strong> The tree partitions counties through predictor thresholds and assigns terminal-node predictions. Its detailed structure is available at full size; the comparison below evaluates whether these partitions generalize to test counties.<br><a class="figure-link" href="../../assets/projects/upward-mobility/pruned-tree.png">View full-size figure</a></figcaption></figure>
+<p>The Lasso curve shows the tradeoff between stronger shrinkage and predictive fit. The minimum-error penalty retains many coefficients, suggesting that useful information is distributed across multiple county measures. The tree represents a different compromise: successive thresholds create groups of counties with a common terminal-node prediction. Averaging many trees allows the forest to smooth these individual partitions.</p>
+
+</section>
+<section id="results"><h2>The forest leads, with a modest margin</h2>
+<figure class="research-figure"><img src="../../assets/projects/upward-mobility/model-errors.png" width="1360" height="748" alt="Random forest has the lowest test RMSE at 0.02182, closely followed by Lasso at 0.02234 and OLS at 0.02280; the tree is at 0.03165." loading="lazy" decoding="async"><figcaption><strong>Figure 3. Training and test errors across the four models.</strong> Lower values indicate better prediction on the 0–1 income-rank scale. Each sample contains 1,259 counties.<br><a class="figure-link" href="../../assets/projects/upward-mobility/model-errors.png">View full-size figure</a></figcaption></figure>
+<p>The forest’s test RMSE is about 2.18 percentile-rank points, compared with 2.23 for Lasso and 2.28 for OLS. Its advantage over Lasso is only about 0.052 percentile-rank points. This single split does not establish a statistically reliable performance difference.</p>
+<p>The forest’s much lower training error does not translate into an equally large test advantage. The single tree has the highest test error, illustrating that flexible partitions alone do not guarantee generalization.</p>
+<figure class="research-figure">
+            <img src="../../assets/projects/upward-mobility/predicted-vs-observed.png" width="925" height="653" alt="Random forest predictions versus observed income ranks for test counties. Points track the dashed equality line in the middle, while low observed ranks tend to be overpredicted and some high ranks underpredicted." loading="lazy" decoding="async">
+            <figcaption><strong>Figure 4. Predictions for held-out counties.</strong> Each point represents a test county. The horizontal axis shows observed adult income rank and the vertical axis its prediction, both on the original 0–1 scale. The dashed line marks exact agreement. Larger deviations at the extremes show what a single average error can conceal.<br><a class="figure-link" href="../../assets/projects/upward-mobility/predicted-vs-observed.png">View full-size prediction figure</a></figcaption>
+          </figure>
+<p>The scatterplot helps interpret the forest’s average error. Predictions track the middle of the observed range more closely, while the lowest and highest outcomes tend to be pulled toward the center. A small overall RMSE can therefore coexist with less accurate predictions for unusually low- or high-mobility counties—the places where an individual prediction may attract the most attention.</p>
+</section>
+<section id="predictors"><h2>What information does the forest use?</h2>
+<p>The forest ranks the share of single-headed households with children in 2000 (P_45) first, followed by mentally unhealthy days (P_56) and population density in 2000 (P_52). Other leading predictors concern demographic composition, low birthweight, household structure, and religious composition.</p>
+<figure class="research-figure">
+            <img src="../../assets/projects/upward-mobility/predictor-importance.png" width="977" height="724" alt="Ten predictors ranked by random forest permutation importance: P_45, P_56, P_52, P_34, P_51, P_58, P_37, P_43, P_85, and P_96, in descending order." loading="lazy" decoding="async">
+            <figcaption><strong>Figure 5. Predictive importance within the fitted forest.</strong> Permutation-importance scores use R's <a href="https://search.r-project.org/CRAN/refmans/randomForest/html/importance.html"><code>randomForest::importance()</code></a>, which scales permutation-based increases in out-of-bag error by their variability by default. Despite the “% Increase in MSE” label, the displayed scores should not be read as literal percentage changes or causal effects.<br><a class="figure-link" href="../../assets/projects/upward-mobility/predictor-importance.png">View full-size importance figure</a></figcaption>
+          </figure><p>P_34 and P_37 denote Black population shares in 2010 and 2000; P_51 is density in 2010; P_58 is low-birthweight births; P_43 is single-headed households with children in 2006–2010; P_85 and P_96 concern Roman Catholic congregations and historically Black Protestant membership.</p>
+<p>Importance locates predictive information among interrelated county characteristics. It does not establish that a demographic attribute, household arrangement, or health measure independently determines a child’s prospects.</p>
+<p>Permutation importance asks how much predictive accuracy deteriorates when a variable’s information is disrupted. It answers a different question from a regression coefficient, which describes a conditional linear relationship. Strongly correlated household or health measures can share predictive information, so neither a low rank nor a large score provides a clean assessment of a variable’s independent substantive importance.</p>
+
+</section>
+<section id="interpretation"><h2>Prediction and its limits</h2>
+<p>Linear models recover much of the predictive signal, while the forest offers a small additional improvement. Correlated predictors and importance metrics complicate interpretation, and county averages conceal variation within places and across children.</p>
+<p>Test outcomes were inspected during preliminary exploration, so evaluation was not fully blind. The comparison uses one random split, no geographic holdout, and predictors from different years: it is a retrospective prediction exercise. Spatial and repeated validation would help assess whether the modest performance differences persist elsewhere.</p>
+<p>A useful next comparison would combine repeated or spatial holdouts with tuning of the forest and alternatives such as elastic net for correlated predictors. These would test whether the small ranking differences survive changes in evaluation design. They are extensions to the current comparison, rather than additional validation already established by its results.</p>
+
+<p>The multidimensional predictive pattern is consistent with the geographic perspective motivating the Opportunity Atlas <span data-cites="atlas">(Chetty et al., 2025)</span>. County averages nevertheless combine distinct neighborhoods and family circumstances. A modest improvement in predicting those averages should be interpreted alongside that aggregation, rather than as a ranking of interventions for individual children.</p>
+
+</section>
+<section id="references" class="project-references" aria-labelledby="references-heading"><h2 id="references-heading">References</h2>
+<p id="ref-atlas">Chetty, R., Friedman, J. N., Hendren, N., Jones, M. R., &amp; Porter, S. R. (2025). <em>The Opportunity Atlas: Mapping the childhood roots of social mobility</em> (Working Paper No. 25147, revised December 2025; originally issued 2018). National Bureau of Economic Research. <a href="http://www.nber.org/papers/w25147">http://www.nber.org/papers/w25147</a></p>
+<p id="ref-chetty18">Chetty, R., &amp; Hendren, N. (2018). The impacts of neighborhoods on intergenerational mobility I: Childhood exposure effects. <em>The Quarterly Journal of Economics</em>, <em>133</em>(3), 1107–1162.</p>
+<p id="ref-chetty14">Chetty, R., Hendren, N., Kline, P., &amp; Saez, E. (2014). Where is the land of opportunity? The geography of intergenerational mobility in the United States. <em>The Quarterly Journal of Economics</em>, <em>129</em>(4), 1553–1623.</p>
+</section>
+      </div>
+      <p class="project-end"><a class="back-link" href="../"><span aria-hidden="true">←</span> Back to Projects</a></p>
+    </article>
+  </main>
+  <footer><span>© 2026 Zheng (Patrick) Tong</span><a href="mailto:zhengtongpatrick@connect.hku.hk">zhengtongpatrick@connect.hku.hk</a></footer>
+</body>
+</html>

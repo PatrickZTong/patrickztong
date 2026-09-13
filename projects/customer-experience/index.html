@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Beyond Satisfaction | Patrick (Zheng Tong)</title>
+  <meta name="description" content="Satisfaction, willingness to buy again, and complaint behavior capture different aspects of customer experience. This analysis compares rating and classification models to examine how these responses relate to perceived quality, value, expectations, and reported problems.">
+  <meta property="og:title" content="Beyond Satisfaction | Patrick (Zheng Tong)">
+  <meta property="og:description" content="Satisfaction, willingness to buy again, and complaint behavior capture different aspects of customer experience. This analysis compares rating and classification models to examine how these responses relate to perceived quality, value, expectations, and reported problems.">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="name" href="../../#home">Patrick (Zheng Tong)</a>
+      <div class="nav-links">
+        <a href="../../#home">Home</a><a href="../" aria-current="location">Projects</a>
+        <a href="../../#papers">Conference Papers</a><a href="../../#education">Education</a><a href="../../#teaching">Teaching</a>
+        <a href="../../CV_Patrick.pdf" target="_blank" rel="noopener">CV</a>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+    <article>
+      <header class="page-intro">
+        <a class="back-link" href="../"><span aria-hidden="true">←</span> Back to Projects</a>
+        <h1>Beyond Satisfaction</h1>
+        <p class="project-subtitle">Customer Experience, Repurchase Intentions, and Complaints</p>
+        <p class="project-summary">Satisfaction, willingness to buy again, and complaint behavior capture different aspects of customer experience. This analysis compares rating and classification models to examine how these responses relate to perceived quality, value, expectations, and reported problems.</p>
+      </header>
+      <nav class="project-toc" aria-label="On this page"><a href="#question">Research question</a><a href="#data">Data</a><a href="#ratings">Rating outcomes</a><a href="#complaints">Complaints</a><a href="#interpretation">Interpretation</a></nav>
+      <div class="project-body">
+<section id="question"><h2>Satisfaction, intention, and complaints</h2>
+<p>A favorable rating does not guarantee a future purchase, and the absence of a complaint does not establish satisfaction. This project models satisfaction and repurchase intention as separate rating outcomes and complaints as a binary outcome. Repurchase intention remains a stated attitude, rather than an observed transaction.</p>
+<p>The three outcomes make different demands on a model. Satisfaction summarizes a current evaluation; repurchase intention concerns a prospective choice; a complaint records whether a particular response occurred. Comparing them avoids treating a good fit for a rating scale as evidence that the same model can identify the less frequent customers who report complaints.</p>
+
+<p>The ACSI framework distinguishes expectations, perceived quality, and perceived value from satisfaction and its related outcomes <span data-cites="fornell">(Fornell et al., 1996)</span>. This motivates analyzing three responses separately: satisfaction evaluates an experience, repurchase intention expresses a prospective judgment, and a complaint records a reported response to that experience. Their relationship is substantively meaningful even when they share predictors.</p>
+<p>The survey design described by <span data-cites="morgeson23">Morgeson et al. (2023)</span> makes these distinctions observable through separate questions. Quality relative to price and price relative to quality are related evaluations, while confirmation of expectations and closeness to an ideal supply additional standards of comparison. Their conceptual overlap helps explain why the project compares ordinary regression with shrinkage methods.</p>
+
+</section>
+<section id="data"><h2>Customer experience across four industries</h2>
+<p>The <a href="https://data.mendeley.com/datasets/64xkbj2ry5/1">American Customer Satisfaction Index (ACSI) public research dataset</a>, released by Forrest Morgeson and Tomas Hult, provides customer-level survey responses collected by ACSI in the United States. The 2015 release covers recent customers of processed-food companies, airlines, internet service providers, and banks. Its linked measures of expectations, quality, value, satisfaction, loyalty, and complaints make it suitable for comparing different dimensions of customer experience. The four industries are a selected sample, not the entire ACSI program.</p>
+<p>Cleaning reduces 8,239 raw records to 7,700 customer records with 19 variables. Satisfaction (SATIS) is the individual 1–10 survey item, distinct from the full ACSI index; repurchase intention also uses a 1–10 scale. Duplicates and missing outcomes are removed, designated missing codes are recoded, and missing predictors are imputed. One completed dataset from five imputations is used for modeling, so imputation uncertainty is not pooled.</p>
+<p>The quality and value measures are related but distinct. Customization asks how well a product or service meets personal requirements; reliability concerns things going wrong, with higher reliability ratings indicating fewer problems. QP evaluates quality given price, whereas PQ evaluates price given quality. These definitions matter when interpreting coefficient signs, particularly for variables whose abbreviated names could suggest the opposite direction.</p>
+
+</section>
+<section id="ratings"><h2>Ratings are more predictable than purchase intentions</h2>
+<p>OLS provides a linear benchmark; ridge and Lasso shrink correlated coefficients. The penalized analyses use an 80/20 split and ten-fold cross-validation to choose penalties. Satisfaction and repurchase intention are excluded from one another’s predictor sets.</p>
+<p>OLS has the strongest reported numerical fit: satisfaction RMSE is 0.800 for OLS, 0.806 for Ridge, and 0.803 for Lasso; repurchase-intention RMSE is 1.291, 1.361, and 1.358 respectively. Across all three models, satisfaction is more closely predicted than repurchase intention.</p>
+<figure class="research-figure"><img src="../../assets/projects/customer-experience/rating-model-errors.svg" width="720" height="504" alt="RMSE for OLS, Ridge, and Lasso: satisfaction 0.800, 0.806, 0.803; repurchase intention 1.291, 1.361, 1.358." loading="lazy" decoding="async"><figcaption><strong>Figure 1. Prediction errors across the three rating models.</strong> Bars compare OLS, Ridge, and Lasso. Both outcomes use 1–10 scales, so RMSE has a common unit; lower values indicate better numerical fit. These are internal evaluation results; imputation precedes the split.<br><a class="figure-link" href="../../assets/projects/customer-experience/rating-model-errors.svg">View full-size figure</a></figcaption></figure>
+<p>Ridge is selected in this project for stability under multicollinearity, even though OLS has the lowest reported RMSE. Lasso provides sparse selection and helps interpret which predictors retain information under shrinkage. These roles distinguish numerical fit from coefficient stability and interpretability.</p>
+<p>Confirmation of expectations, proximity to an ideal product or service, quality, and value carry substantial information about satisfaction. These related evaluations are measured together; their predictive association does not establish a service-improvement effect.</p>
+<figure class="research-figure"><img src="../../assets/projects/customer-experience/satisfaction-coefficients.jpg" width="4317" height="2809" alt="Lasso coefficients for satisfaction emphasize confirmation, ideal comparison, quality and value, with a positive coefficient for the no-complaint indicator." loading="lazy" decoding="async"><figcaption><strong>Figure 2. The satisfaction model’s retained coefficients.</strong> The Lasso plot displays signed coefficients, despite its “importance” title. CONFIRM measures expectations met, IDEAL compares experience with an ideal, QP and PQ measure quality/value, and COMP0 denotes no complaint; its positive coefficient contrasts with the complaint category. Coefficients describe the fitted rating relationship, not causal effects.<br><a class="figure-link" href="../../assets/projects/customer-experience/satisfaction-coefficients.jpg">View full-size figure</a></figcaption></figure>
+<p>Regularization addresses the overlap among these evaluations. Ridge distributes shrinkage across coefficients, while Lasso can set some to zero; a zero coefficient does not show that the underlying concept is irrelevant when another correlated measure retains its information. The wider repurchase errors indicate that the same survey measures capture intentions less completely than satisfaction. They do not identify which unmeasured influences account for the remaining error.</p>
+
+</section>
+<section id="complaints"><h2>High accuracy can conceal missed complaints</h2>
+<p>Only about 17% of customers report a complaint. An unpruned tree, a pruned tree, and a class-weighted random forest are compared on this unevenly distributed outcome. At a 0.5 threshold, the forest achieves 85.3% accuracy but only 31.2% sensitivity, identifying fewer than one-third of complaints.</p>
+<p>The tree models identify low repurchase intention together with poor value-for-money as a profile with elevated complaint incidence. A class-weighted forest gives complaints more weight during fitting, but the confusion matrix shows that weighting alone does not solve the missed-complaint problem. Most correctly classified records are non-complaints, which helps explain why overall accuracy looks favorable despite low sensitivity.</p>
+<figure class="research-figure"><img src="../../assets/projects/customer-experience/complaint-classification.png" width="1027" height="859" alt="Of 266 reported complaints, the model identifies 83 and misses 183. Of 1,273 non-complaints, it correctly classifies 1,230 and flags 43." loading="lazy" decoding="async"><figcaption><strong>Figure 3. Random-forest classification at the reported threshold.</strong> The matrix contains 1,230 true negatives, 43 false positives, 183 false negatives, and 83 true positives across 1,539 evaluation records. Rows are reported outcomes; columns are predictions.<br><a class="figure-link" href="../../assets/projects/customer-experience/complaint-classification.png">View full-size figure</a></figcaption></figure><p>Changing the threshold trades missed complaints against false alarms. The ROC and precision–recall curves make this tradeoff visible across operating points.</p>
+<figure class="research-figure"><img src="../../assets/projects/customer-experience/complaint-roc.png" width="4913" height="2690" alt="ROC curves compare unpruned tree, pruned tree and random forest complaint classification." loading="lazy" decoding="async"><figcaption><strong>Figure 4. Complaint classification across thresholds.</strong> ROC curves compare true-positive and false-positive rates. AUC values are approximately 0.772 for the unpruned tree, 0.634 for the pruned tree, and 0.818 for the forest.<br><a class="figure-link" href="../../assets/projects/customer-experience/complaint-roc.png">View full-size figure</a></figcaption></figure>
+<figure class="research-figure"><img src="../../assets/projects/customer-experience/complaint-pr.png" width="1311" height="821" alt="Precision–recall curves show the tradeoff between identifying more complaints and the share of flagged customers who complained." loading="lazy" decoding="async"><figcaption><strong>Figure 5. Precision and recall for the less frequent outcome.</strong> Precision–recall evaluation focuses on complaints. Reported areas are approximately 0.457, 0.488, and 0.546 for the unpruned tree, pruned tree, and forest. Better ranking across thresholds does not guarantee high sensitivity at the selected threshold.<br><a class="figure-link" href="../../assets/projects/customer-experience/complaint-pr.png">View full-size figure</a></figcaption></figure>
+
+</section>
+<section id="evaluation"><h2>How far do these predictive results travel?</h2>
+<p>Imputation before splitting can share information across training and evaluation records. Forest tuning also uses the test AUC later reported as performance. Both limit the independence of evaluation and can make results optimistic. An untouched final sample and preprocessing confined to training folds would provide a stronger comparison.</p>
+<p>The two curve summaries also distinguish different kinds of improvement. Pruning lowers ROC area relative to the unpruned tree while slightly raising precision–recall area. There is no single ordering that makes pruning better or worse on every criterion. The forest has the largest area on both curves, yet its selected threshold still leaves many complaints undetected.</p>
+
+</section>
+<section id="interpretation"><h2>Related evaluations, different behavioral uncertainty</h2>
+<p>Customer ratings share strong predictive information, while complaint detection remains difficult at the evaluated threshold. A useful model therefore depends on which outcome matters and on the relative cost of missed complaints and false alarms. Neither the rating associations nor the classification results identify what would happen after changing a service policy.</p>
+<p>A practical interpretation must therefore specify the intended decision. A model used to prioritize a limited number of follow-ups emphasizes precision, while one intended to find more dissatisfied complainants emphasizes recall. Choosing that tradeoff would require explicit costs and fresh validation. The present results describe the available prediction tradeoffs rather than demonstrating that a particular outreach or service intervention works.</p>
+
+<p>Complaint behavior also has a relationship with loyalty that cannot be reduced to satisfaction alone. <span data-cites="morgeson20">Morgeson et al. (2020)</span> examine how complaint handling conditions the complaint–loyalty relationship. This motivates considering service recovery in further research; the present complaint classifiers identify observed response patterns and do not estimate the effect of improving complaint handling.</p>
+
+</section>
+<section id="references" class="project-references" aria-labelledby="references-heading"><h2 id="references-heading">References</h2>
+<p id="ref-fornell">Fornell, C., Johnson, M. D., Anderson, E. W., Cha, J., &amp; Bryant, B. E. (1996). The American Customer Satisfaction Index: Nature, purpose, and findings. <em>Journal of Marketing</em>, <em>60</em>(4), 7–18.</p>
+<p id="ref-morgeson20">Morgeson, F. V., III, Hult, G. T. M., Mithas, S., Keiningham, T., &amp; Fornell, C. (2020). Turning complaining customers into loyal customers: Moderators of the complaint handling–customer loyalty relationship. <em>Journal of Marketing</em>, <em>84</em>(5), 79–99. <a href="https://doi.org/10.1177/0022242920929029">https://doi.org/10.1177/0022242920929029</a></p>
+<p id="ref-morgeson23">Morgeson, F. V., III, Hult, G. T. M., Sharma, U., &amp; Fornell, C. (2023). The American Customer Satisfaction Index (ACSI): A sample dataset and description. <em>Data in Brief</em>, <em>48</em>, 109123. <a href="https://doi.org/10.1016/j.dib.2023.109123">https://doi.org/10.1016/j.dib.2023.109123</a></p>
+</section>
+      </div>
+      <p class="project-end"><a class="back-link" href="../"><span aria-hidden="true">←</span> Back to Projects</a></p>
+    </article>
+  </main>
+  <footer><span>© 2026 Zheng (Patrick) Tong</span><a href="mailto:zhengtongpatrick@connect.hku.hk">zhengtongpatrick@connect.hku.hk</a></footer>
+</body>
+</html>

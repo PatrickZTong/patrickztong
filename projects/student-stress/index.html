@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Beyond Workload | Patrick (Zheng Tong)</title>
+  <meta name="description" content="Academic demands sit alongside social resources, self-evaluations, and everyday difficulties in accounts of student stress. This project examines how those dimensions are associated with a high-stress category and compares a linear classification model with a flexible boosted-tree model.">
+  <meta property="og:title" content="Beyond Workload | Patrick (Zheng Tong)">
+  <meta property="og:description" content="Academic demands sit alongside social resources, self-evaluations, and everyday difficulties in accounts of student stress. This project examines how those dimensions are associated with a high-stress category and compares a linear classification model with a flexible boosted-tree model.">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="name" href="../../#home">Patrick (Zheng Tong)</a>
+      <div class="nav-links">
+        <a href="../../#home">Home</a><a href="../" aria-current="location">Projects</a>
+        <a href="../../#papers">Conference Papers</a><a href="../../#education">Education</a><a href="../../#teaching">Teaching</a>
+        <a href="../../CV_Patrick.pdf" target="_blank" rel="noopener">CV</a>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+    <article>
+      <header class="page-intro">
+        <a class="back-link" href="../"><span aria-hidden="true">←</span> Back to Projects</a>
+        <h1>Beyond Workload</h1>
+        <p class="project-subtitle">Social Support, Self-Esteem, and Student Stress</p>
+        <p class="project-summary">Academic demands sit alongside social resources, self-evaluations, and everyday difficulties in accounts of student stress. This project examines how those dimensions are associated with a high-stress category and compares a linear classification model with a flexible boosted-tree model.</p>
+      </header>
+      <nav class="project-toc" aria-label="On this page"><a href="#question">Research question</a><a href="#data">Data</a><a href="#associations">Associations</a><a href="#models">Models</a><a href="#interpretation">Interpretation</a></nav>
+      <div class="project-body">
+<section id="question"><h2>Looking beyond study load</h2>
+<p>Students with similar academic demands can report different levels of stress. Which social and psychological dimensions help distinguish those experiencing high stress, and does a nonlinear classifier improve on the pattern captured by logistic regression?</p>
+<p>The motivation is a distinction between demands and resources for coping with them. Workload describes one demand, while social support and self-esteem concern different aspects of the student’s circumstances. Considering them jointly asks whether academic pressure alone gives an adequate description of the observed stress pattern, without assuming that every association identifies a cause or remedy.</p>
+
+<p>Stress involves the appraisal of demands relative to coping resources, and those resources are embedded in social and cultural settings <span data-cites="palsane">(Palsane &amp; Lam, 1996)</span>. Studies of college students examine psychological symptoms, academic pressures, and social circumstances together <span data-cites="saleh ramon">(Saleh et al., 2017; Ramón-Arbués et al., 2020)</span>. This multidimensional perspective gives “Beyond Workload” its substantive focus: whether social and psychological resources carry information about high stress beyond academic demands alone.</p>
+<p>Research on adolescent stress reduction also directs attention to coping resources <span data-cites="rew">(Rew et al., 2014)</span>. It motivates examining these dimensions, but evidence from interventions elsewhere does not turn the present cross-sectional comparison into an intervention evaluation.</p>
+
+</section>
+<section id="data"><h2>A student stress classification dataset</h2>
+<p>The <a href="https://www.kaggle.com/datasets/mdsultanulislamovi/student-stress-monitoring-datasets">Student Stress Monitoring collection on Kaggle</a>, published by Sultanul Ovi, provides a 1,100-record file with psychological, physical, environmental, academic, and social measures. Each row is a student record with a stress category and 20 predictors. This project uses that file to examine the joint pattern across several dimensions of student experience; it does not assume the sample represents a specific national or university population.</p>
+<p>The low and moderate stress categories are combined into “non-high stress” and compared with high stress. The selected predictors include anxiety/depression, self-esteem, mental-health history, headache, noise, academic performance, study load, social support, peer pressure, and extracurricular activities.</p>
+<figure class="research-figure"><img src="../../assets/projects/student-stress/stress-distribution.png" width="647" height="482" alt="Bar plot of 731 non-high-stress and 369 high-stress records." loading="lazy" decoding="async"><figcaption><strong>Figure 1. The binary classification outcome.</strong> High stress accounts for 369 of 1,100 records (33.55%); the other 731 combine low and moderate stress. This is a binary classification task.<br><a class="figure-link" href="../../assets/projects/student-stress/stress-distribution.png">View full-size figure</a></figcaption></figure>
+<p>Predictor selection uses rank-based associations to examine the ordinal measures and their overlap. Anxiety and depression are combined, while the final selection spans psychological characteristics, daily burdens, and social resources. Combining low and moderate stress creates a focused high-stress comparison, but it also discards the distinction between those two lower categories. The models consequently do not estimate a three-level severity progression.</p>
+
+</section>
+<section id="associations"><h2>Social resources and pressure in the observed pattern</h2>
+<figure class="research-figure"><img src="../../assets/projects/student-stress/social-context.png" width="1384" height="461" alt="High-stress records show lower social support and higher peer pressure and extracurricular-activity scores." loading="lazy" decoding="async"><figcaption><strong>Figure 2. Social and contextual measures by stress category.</strong> Boxplots compare social support, peer pressure, and extracurricular activities between non-high and high stress. Group differences are descriptive and may reflect common causes or reverse relationships.<br><a class="figure-link" href="../../assets/projects/student-stress/social-context.png">View full-size figure</a></figcaption></figure>
+<p>Logistic regression uses standardized predictors to estimate conditional associations with high stress. Social support and self-esteem have the largest negative coefficients; headache and peer pressure have positive coefficients. Academic performance is negatively associated with high stress, while study load has a smaller positive coefficient.</p>
+<figure class="research-figure"><img src="../../assets/projects/student-stress/stress-associations.png" width="1237" height="986" alt="Social support and self-esteem have the largest negative coefficients. Headache and peer pressure have positive coefficients; academic performance has a negative coefficient." loading="lazy" decoding="async"><figcaption><strong>Figure 3. Logistic associations with high stress.</strong> Negative coefficients indicate lower fitted log-odds of high stress, conditional on the other included variables. Point estimates are displayed without uncertainty intervals.<br><a class="figure-link" href="../../assets/projects/student-stress/stress-associations.png">View full-size figure</a></figcaption></figure>
+<p>The boxplots show how group distributions differ before adjustment; the coefficient plot asks about each predictor conditional on the others. These need not give the same ordering. For example, mental-health history has a much smaller conditional coefficient than social support or self-esteem. Extracurricular activity also accompanies stress in these data, but its association cannot establish that reducing participation would improve well-being.</p>
+<p>The negative associations for social support and self-esteem are consistent with literature describing these as coping resources <span data-cites="hamdan saleh">(Hamdan-Mansour &amp; Dawani, 2008; Saleh et al., 2017)</span>. They are protective correlates in this dataset, not estimated causal protective effects. The positive headache and peer-pressure coefficients likewise place physical discomfort and social strain alongside coursework. Their interpretation fits a multidimensional account of student distress <span data-cites="ramon">(Ramón-Arbués et al., 2020)</span>, while neither their direction nor their size establishes which condition precedes another.</p>
+
+</section>
+<section id="models"><h2>Linear associations and flexible prediction</h2>
+<p>LightGBM uses boosted trees to allow nonlinear relationships and interactions. Its evaluation uses five-fold stratified cross-validation and 100 boosting iterations. Unlike a signed logistic coefficient, tree importance measures contribution to the prediction procedure and has no effect direction.</p>
+<p>Standardization expresses each logistic predictor in comparable standard-deviation units, while retaining the sign of its relationship with fitted log-odds. Boosted-tree importance has a different meaning: a variable can be useful in repeated splits or in improving prediction without having a single uniform direction. The two models therefore offer complementary descriptions rather than interchangeable rankings of causes.</p>
+<p>Both models discriminate strongly within their evaluation settings. LightGBM has precision 0.9195, recall 0.8565, F1 0.8861, and AUC 0.9851. Logistic regression has F1 of 0.900 and recall of 0.892. The boosted model’s higher AUC, compared with approximately 0.976 for logistic regression, does not imply that every threshold-based metric improves.</p>
+
+</section>
+<section id="performance"><h2>Discrimination and classification errors</h2>
+<figure class="research-figure"><img src="../../assets/projects/student-stress/stress-confusion.png" width="514" height="362" alt="Fold-average LightGBM confusion matrix with approximately 139 true negatives, 7 false positives, 9 false negatives, and 64 true positives." loading="lazy" decoding="async"><figcaption><strong>Figure 4. LightGBM errors averaged across validation folds.</strong> The matrix displays rounded mean cell counts across five folds, not a pooled confusion matrix for all 1,100 records. Rows are actual labels; columns are predictions. These rounded average cells illustrate error patterns and should not be used to recompute the model’s evaluation metrics.<br><a class="figure-link" href="../../assets/projects/student-stress/stress-confusion.png">View full-size figure</a></figcaption></figure>
+<figure class="research-figure"><img src="../../assets/projects/student-stress/stress-roc.png" width="542" height="386" alt="LightGBM ROC curve rises near the upper-left corner, showing high discrimination across classification thresholds." loading="lazy" decoding="async"><figcaption><strong>Figure 5. The boosted model’s ROC curve.</strong> The curve shows high discrimination in five-fold validation, with AUC approximately 0.985. AUC summarizes ranking across thresholds; it is not a probability that a future student will be classified correctly.<br><a class="figure-link" href="../../assets/projects/student-stress/stress-roc.png">View full-size figure</a></figcaption></figure>
+<p>These estimates do not establish performance in another student population. The model comparison lacks a common independent final evaluation, and feature selection and preprocessing would need to be confined to training folds for a stronger validation.</p>
+<p>The confusion matrix concentrates attention on the errors that the ROC curve summarizes less directly. False negatives are high-stress records classified as non-high; false positives reverse that mistake. A high AUC can coexist with either kind of error at a particular threshold. The stronger logistic recall in this comparison illustrates why the model with the largest AUC need not identify the most high-stress cases.</p>
+
+</section>
+<section id="interpretation"><h2>A broader description of student stress</h2>
+<p>Longitudinal measurement and validation in a clearly defined student population would help determine which patterns persist. Strong prediction within this dataset alone does not establish an effective intervention.</p>
+<p>The results motivate studying academic demands together with social and psychological circumstances, rather than interpreting workload in isolation. They do not determine whether support changes stress, stress changes perceived support, or both reflect another condition. Repeated observations and a documented sampling frame would be needed to move from this joint descriptive pattern toward a stronger account of how stress develops.</p>
+
+</section>
+<section id="references" class="project-references" aria-labelledby="references-heading"><h2 id="references-heading">References</h2>
+<p id="ref-hamdan">Hamdan-Mansour, A. M., &amp; Dawani, H. A. (2008). Social support and stress among university students in Jordan. <em>International Journal of Mental Health and Addiction</em>, <em>6</em>(3), 442–450. <a href="https://doi.org/10.1007/s11469-007-9112-6">https://doi.org/10.1007/s11469-007-9112-6</a></p>
+<p id="ref-palsane">Palsane, M. N., &amp; Lam, D. J. (1996). Stress and coping from traditional Indian and Chinese perspectives. <em>Psychology and Developing Societies</em>, <em>8</em>(1), 29–53. <a href="https://doi.org/10.1177/097133369600800103">https://doi.org/10.1177/097133369600800103</a></p>
+<p id="ref-ramon">Ramón-Arbués, E., Gea-Caballero, V., Granada-López, J. M., Juárez-Vela, R., Pellicer-García, B., &amp; Antón-Solanas, I. (2020). The prevalence of depression, anxiety and stress and their associated factors in college students. <em>International Journal of Environmental Research and Public Health</em>, <em>17</em>(19), 7001. <a href="https://doi.org/10.3390/ijerph17197001">https://doi.org/10.3390/ijerph17197001</a></p>
+<p id="ref-rew">Rew, L., Johnson, K., &amp; Young, C. (2014). A systematic review of interventions to reduce stress in adolescence. <em>Issues in Mental Health Nursing</em>, <em>35</em>(11), 851–863. <a href="https://doi.org/10.3109/01612840.2014.924044">https://doi.org/10.3109/01612840.2014.924044</a></p>
+<p id="ref-saleh">Saleh, D., Camart, N., &amp; Romo, L. (2017). Predictors of stress in college students. <em>Frontiers in Psychology</em>, <em>8</em>, 19. <a href="https://doi.org/10.3389/fpsyg.2017.00019">https://doi.org/10.3389/fpsyg.2017.00019</a></p>
+</section>
+      </div>
+      <p class="project-end"><a class="back-link" href="../"><span aria-hidden="true">←</span> Back to Projects</a></p>
+    </article>
+  </main>
+  <footer><span>© 2026 Zheng (Patrick) Tong</span><a href="mailto:zhengtongpatrick@connect.hku.hk">zhengtongpatrick@connect.hku.hk</a></footer>
+</body>
+</html>
